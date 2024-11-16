@@ -1,0 +1,79 @@
+<?php
+
+declare(strict_types=1);
+
+namespace App\Message;
+
+use Symfony\Component\Uid\Uuid;
+
+readonly class JoinGame implements PlayerActionInterface
+{
+    /**
+     * @param array<string, int> $cardIds
+     */
+    public function __construct(
+        private string $gameId,
+        private string $playerId,
+        private string $userId,
+        private string $userName,
+        private string $deckId,
+        private ?string $deckName,
+        private array $cardIds,
+    ) {
+    }
+
+    #[\Override]
+    public function getGameId(): string
+    {
+        return $this->gameId;
+    }
+
+    #[\Override]
+    public function getPlayerId(): string
+    {
+        return $this->playerId;
+    }
+
+    public function getUserId(): string
+    {
+        return $this->userId;
+    }
+
+    public function getUserName(): string
+    {
+        return $this->userName;
+    }
+
+    public function getDeckId(): string
+    {
+        return $this->deckId;
+    }
+
+    public function getDeckName(): ?string
+    {
+        return $this->deckName;
+    }
+
+    /**
+     * @return array<string, int>
+     */
+    public function getCardIds(): array
+    {
+        return $this->cardIds;
+    }
+
+    /**
+     * @param array<int> $deckContent
+     *
+     * @return array<string, int>
+     */
+    public static function generateCardsIds(array $deckContent): array
+    {
+        $cardsIds = [];
+        foreach ($deckContent as $id) {
+            $cardsIds[Uuid::v4()->toString()] = $id;
+        }
+
+        return $cardsIds;
+    }
+}

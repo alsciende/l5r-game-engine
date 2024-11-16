@@ -1,0 +1,5 @@
+services:
+    App\Notifier\NotifierInterface:
+        class: App\Notifier\LoggerNotifier
+        arguments:
+            - '@monolog.logger.notification'
