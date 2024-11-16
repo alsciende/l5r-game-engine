@@ -10,139 +10,130 @@ framework:
             supports:
                 - App\Entity\Game
             initial_marking: join_game
-            places:
-                join_game:
-                bid_tokens:
-                choose_fellowship:
-                resolve_turn_start:
-                resolve_fellowship_start:
-                perform_fellowship_actions_freeps:
-                resolve_move_triggers_freeps:
-                resolve_shadow_start:
-                perform_shadow_actions_shadow:
-                resolve_maneuver_start:
-                perform_maneuver_actions:
-                resolve_archery_start:
-                perform_archery_actions:
-                resolve_archery_fire:
-                resolve_assignment_start:
-                perform_assignment_actions:
-                assign_defenders_freeps:
-                assign_attackers_shadow:
-                choose_skirmish_freeps:
-                resolve_skirmish_start:
-                perform_skirmish_actions:
-                resolve_skirmish_end:
-                resolve_regroup_start:
-                perform_regroup_actions:
-                reconcile_hand_shadow:
-                choose_move_again_freeps:
-                reconcile_hand_freeps:
-                resolve_turn_end:
-                finished:
             transitions:
                 start_game:
                     from: join_game
-                    to: bid_tokens
+                    to: dynasty_phase_begins
                     metadata:
                         auto: true
-                complete_bid:
-                    from: bid_tokens
-                    to: choose_fellowship
+                t0:
+                    from: dynasty_phase_begins
+                    to: reveal_facedown_dynasty_cards
                     metadata:
                         auto: true
-                start_turn:
-                    from: choose_fellowship
-                    to: resolve_turn_start
+                t1:
+                    from: reveal_facedown_dynasty_cards
+                    to: collect_fate
                     metadata:
                         auto: true
-                start_fellowship:
-                    from: resolve_turn_start
-                    to: resolve_fellowship_start
-                fellowship:
-                    from: resolve_fellowship_start
-                    to: perform_fellowship_actions_freeps
-                move:
-                    from: perform_fellowship_actions_freeps
-                    to: resolve_move_triggers_freeps
-                start_shadow:
-                    from: resolve_move_triggers_freeps
-                    to: resolve_shadow_start
-                shadow:
-                    from: resolve_shadow_start
-                    to: perform_shadow_actions_shadow
-                start_maneuver:
-                    from: perform_shadow_actions_shadow
-                    to: resolve_maneuver_start
-                no_minions:
-                    from: [perform_shadow_actions_shadow, perform_maneuver_actions, resolve_archery_fire]
-                    to: resolve_regroup_start
-                maneuver:
-                    from: resolve_maneuver_start
-                    to: perform_maneuver_actions
-                start_archery:
-                    from: perform_maneuver_actions
-                    to: resolve_archery_start
-                archery:
-                    from: resolve_archery_start
-                    to: perform_archery_actions
-                archery_fire:
-                    from: perform_archery_actions
-                    to: resolve_archery_fire
-                start_assignment:
-                    from: resolve_archery_fire
-                    to: resolve_assignment_start
-                assignment:
-                    from: resolve_assignment_start
-                    to: perform_assignment_actions
-                assign_defenders:
-                    from: perform_assignment_actions
-                    to: assign_defenders_freeps
-                assign_attackers:
-                    from: assign_defenders_freeps
-                    to: assign_attackers_shadow
-                all_assigned:
-                    from: [assign_defenders_freeps, assign_attackers_shadow]
-                    to: choose_skirmish_freeps
-                start_skirmish:
-                    from: choose_skirmish_freeps
-                    to: resolve_skirmish_start
-                skirmish:
-                    from: resolve_skirmish_start
-                    to: perform_skirmish_actions
-                resolve_skirmish:
-                    from: perform_skirmish_actions
-                    to: resolve_skirmish_end
-                next_skirmish:
-                    from: resolve_skirmish_end
-                    to: choose_skirmish_freeps
-                fierce_minions:
-                    from: resolve_skirmish_end
-                    to: resolve_assignment_start
-                start_regroup:
-                    from: resolve_skirmish_end
-                    to: resolve_regroup_start
-                regroup:
-                    from: resolve_regroup_start
-                    to: perform_regroup_actions
-                reconcile_shadow:
-                    from: perform_regroup_actions
-                    to: reconcile_hand_shadow
-                move_decision:
-                    from: reconcile_hand_shadow
-                    to: choose_move_again_freeps
-                game_over:
-                    from: reconcile_hand_shadow
-                    to: finished
-                stop:
-                    from: choose_move_again_freeps
-                    to: reconcile_hand_freeps
-                move_again:
-                    from: choose_move_again_freeps
-                    to: resolve_shadow_start
-                end_of_turn:
-                    from: reconcile_hand_freeps
-                    to: resolve_turn_end
-                next_turn:
-                    from: resolve_turn_end
-                    to: resolve_turn_start
+                t2:
+                    from: collect_fate
+                    to: play_cards_from_provinces
+                    metadata:
+                        auto: true
+                t3:
+                    from: play_cards_from_provinces
+                    to: dynasty_phase_ends
+                t4:
+                    from: dynasty_phase_ends
+                    to: draw_phase_begins
+                t5:
+                    from: draw_phase_begins
+                    to: honor_bid
+                t6:
+                    from: honor_bid
+                    to: reveal_honor_dials
+                t7:
+                    from: reveal_honor_dials
+                    to: transfer_honor
+                t8:
+                    from: transfer_honor
+                    to: draw_cards
+                t9:
+                    from: draw_cards
+                    to: draw_phase_ends
+                t10:
+                    from: draw_phase_ends
+                    to: conflict_phase_begins
+                t11:
+                    from: conflict_phase_begins
+                    to: declare_conflict
+                t12:
+                    from: declare_conflict
+                    to: declare_defenders
+                t13:
+                    from: declare_defenders
+                    to: conflict_action_window
+                t14:
+                    from: conflict_action_window
+                    to: determine_result
+                t15:
+                    from: determine_result
+                    to: apply_unopposed
+                t16:
+                    from: apply_unopposed
+                    to: break_province
+                t17:
+                    from: break_province
+                    to: resolve_ring_effects
+                t18:
+                    from: resolve_ring_effects
+                    to: claim_ring
+                t19:
+                    from: claim_ring
+                    to: return_home
+                t20:
+                    from: return_home
+                    to: conflict_ends
+                t21:
+                    from: conflict_ends
+                    to: declare_conflict
+                t22:
+                    from: conflict_phase_begins
+                    to: determine_imperial_favor
+                t23:
+                    from: conflict_ends
+                    to: determine_imperial_favor
+                t24:
+                    from: determine_imperial_favor
+                    to: glory_count
+                t25:
+                    from: glory_count
+                    to: claim_imperial_favor
+                t26:
+                    from: claim_imperial_favor
+                    to: conflict_phase_ends
+                t27:
+                    from: conflict_phase_ends
+                    to: fate_phase_begins
+                t28:
+                    from: fate_phase_begins
+                    to: discard_characters_with_no_fate
+                t29:
+                    from: discard_characters_with_no_fate
+                    to: remove_fate_from_characters
+                t30:
+                    from: remove_fate_from_characters
+                    to: place_fate_on_unclaimed_rings
+                t31:
+                    from: place_fate_on_unclaimed_rings
+                    to: ready_cards
+                t32:
+                    from: ready_cards
+                    to: discard_from_provinces
+                t33:
+                    from: discard_from_provinces
+                    to: return_rings
+                t34:
+                    from: return_rings
+                    to: pass_first_player_token
+                t35:
+                    from: pass_first_player_token
+                    to: fate_phase_ends
+                t36:
+                    from: fate_phase_ends
+                    to: dynasty_phase_begins
+
+
+
+
