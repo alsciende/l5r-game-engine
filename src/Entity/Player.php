@@ -7,6 +7,7 @@ namespace App\Entity;
 use App\Repository\PlayerRepository;
 use Doctrine\Common\Collections\ArrayCollection;
 use Doctrine\Common\Collections\Collection;
+use Doctrine\DBAL\Types\Types;
 use Doctrine\ORM\Mapping as ORM;
 
 /**
@@ -19,6 +20,9 @@ class Player
     #[ORM\Id]
     #[ORM\Column]
     private string $id;
+
+    #[ORM\Column(type: Types::TEXT)]
+    private string $state = '{}';
 
     #[ORM\ManyToOne(inversedBy: 'players')]
     #[ORM\JoinColumn(nullable: false)]
@@ -46,6 +50,16 @@ class Player
     public function getId(): string
     {
         return $this->id;
+    }
+
+    public function getState(): string
+    {
+        return $this->state;
+    }
+
+    public function setState(string $state): void
+    {
+        $this->state = $state;
     }
 
     public function getGame(): ?Game

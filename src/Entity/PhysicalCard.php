@@ -35,8 +35,9 @@ abstract class PhysicalCard
     #[ORM\Column]
     private string $id;
 
-    #[ORM\Column]
-    private string $logicalCardId;
+    #[ORM\ManyToOne(inversedBy: 'physicalCards')]
+    #[ORM\JoinColumn(nullable: false)]
+    private LogicalCard $logicalCard;
 
     #[ORM\Column(length: 255, nullable: true)]
     private ?string $currentPlace = null;
@@ -60,10 +61,10 @@ abstract class PhysicalCard
 
     private ?string $side = null;
 
-    public function __construct(string $id, string $logicalCardId)
+    public function __construct(string $id, LogicalCard $logicalCard)
     {
         $this->id = $id;
-        $this->logicalCardId = $logicalCardId;
+        $this->logicalCard = $logicalCard;
     }
 
     public function getId(): string
@@ -71,9 +72,9 @@ abstract class PhysicalCard
         return $this->id;
     }
 
-    public function getLogicalCardId(): string
+    public function getLogicalCard(): LogicalCard
     {
-        return $this->logicalCardId;
+        return $this->logicalCard;
     }
 
     public function getCurrentPlace(): ?string

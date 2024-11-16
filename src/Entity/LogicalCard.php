@@ -107,6 +107,13 @@ class LogicalCard
     #[Ignore]
     private Collection $printings;
 
+    /**
+     * @var Collection<int, PhysicalCard>
+     */
+    #[ORM\OneToMany(targetEntity: PhysicalCard::class, mappedBy: 'logicalCard', cascade: ['persist', 'remove'])]
+    #[Ignore]
+    private Collection $physicalCards;
+
     public function __construct()
     {
         $this->printings = new ArrayCollection();
@@ -160,7 +167,7 @@ class LogicalCard
         return $this;
     }
 
-    public function getType(): ?Type
+    public function getType(): Type
     {
         return $this->type;
     }
@@ -412,6 +419,22 @@ class LogicalCard
     public function setUniqueness(bool $uniqueness): void
     {
         $this->uniqueness = $uniqueness;
+    }
+
+    /**
+     * @return Collection<int, PhysicalCard>
+     */
+    public function getPhysicalCards(): Collection
+    {
+        return $this->physicalCards;
+    }
+
+    /**
+     * @param Collection<int, PhysicalCard> $physicalCards
+     */
+    public function setPhysicalCards(Collection $physicalCards): void
+    {
+        $this->physicalCards = $physicalCards;
     }
 
     public function __toString(): string

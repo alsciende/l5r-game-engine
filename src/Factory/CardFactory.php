@@ -28,7 +28,7 @@ readonly class CardFactory
         $classname = $this->getClassname($logicalCard->getSide()->value);
 
         /** @var PhysicalCard $card */
-        $card = new $classname($physicalCardId, $logicalCardId);
+        $card = new $classname($physicalCardId, $logicalCard);
         $card->setTitle($logicalCard->getName());
 
         $this->registry->get($card)->getMarking($card);

@@ -6,7 +6,7 @@ namespace App\Command;
 
 use App\Entity\Game;
 use App\Repository\GameRepository;
-use App\Service\StateManager;
+use App\Service\GameStateManager;
 use Symfony\Component\Console\Attribute\AsCommand;
 use Symfony\Component\Console\Command\Command;
 use Symfony\Component\Console\Input\InputArgument;
@@ -25,7 +25,7 @@ class GameDumpCommand extends Command
     public function __construct(
         private readonly GameRepository $repository,
         private readonly WorkflowInterface $gameStateMachine,
-        private readonly StateManager $stateManager,
+        private readonly GameStateManager $stateManager,
     ) {
         parent::__construct();
     }

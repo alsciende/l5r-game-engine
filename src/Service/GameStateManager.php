@@ -5,19 +5,19 @@ declare(strict_types=1);
 namespace App\Service;
 
 use App\Entity\Game;
-use App\State\State;
+use App\State\GameState;
 use Psr\Log\LoggerInterface;
 use Symfony\Component\Serializer\SerializerInterface;
 
-class StateManager
+readonly class GameStateManager
 {
     public function __construct(
-        private readonly SerializerInterface $serializer,
-        private readonly LoggerInterface $logger,
+        private SerializerInterface $serializer,
+        private LoggerInterface $logger,
     ) {
     }
 
-    public function getState(Game $game): State
+    public function getState(Game $game): GameState
     {
         $serialized = $game->getState();
         $this->logger->debug('Game state getter', [
@@ -25,10 +25,10 @@ class StateManager
             'state' => $serialized,
         ]);
 
-        return $this->serializer->deserialize($serialized, State::class, 'json');
+        return $this->serializer->deserialize($serialized, GameState::class, 'json');
     }
 
-    public function setState(Game $game, State $state): void
+    public function setState(Game $game, GameState $state): void
     {
         $serialized = $this->serializer->serialize($state, 'json');
         $this->logger->debug('Game state setter', [
@@ -41,7 +41,7 @@ class StateManager
     }
 
     /**
-     * @param \Closure(State): mixed $closure
+     * @param \Closure(GameState): mixed $closure
      */
     public function withState(Game $game, \Closure $closure): void
     {

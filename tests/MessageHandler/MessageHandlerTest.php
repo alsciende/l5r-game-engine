@@ -7,9 +7,12 @@ namespace App\Tests\MessageHandler;
 use App\DataFixtures\StarterCraneDeckTrait;
 use App\DataFixtures\StarterDeckLionTrait;
 use App\Entity\Game;
+use App\Entity\PhysicalCard;
 use App\Entity\Player;
+use App\Message\ChooseStrongholdProvince;
 use App\Message\CreateGame;
 use App\Message\JoinGame;
+use App\Repository\CardRepository;
 use App\Repository\GameRepository;
 use Doctrine\ORM\EntityManagerInterface;
 use Symfony\Bundle\FrameworkBundle\Test\KernelTestCase;
@@ -94,6 +97,69 @@ class MessageHandlerTest extends KernelTestCase
         $this->assertInstanceOf(Player::class, $jane);
         $this->assertSame($game->getId(), $jane->getGame()?->getId());
         $this->assertSame(2, $game->getPlayers()->count());
+
+        $this->assertSame('place_provinces', $game->getCurrentPlace());
+
+        return $gameId;
+    }
+
+    /**
+     * @depends testJoinGameHandler
+     */
+    public function testChooseStrongholdProvinceHandler(string $gameId): string
+    {
+        $kernel = self::bootKernel();
+        $container = static::getContainer();
+
+        /** @var EntityManagerInterface $manager */
+        $manager = $container->get(EntityManagerInterface::class);
+
+        /** @var GameRepository $gameRepository */
+        $gameRepository = $container->get(GameRepository::class);
+        $game = $gameRepository->get($gameId);
+        $this->assertSame(2, $game->getPlayers()->count());
+        $john = $game->getPlayers()->get(0);
+        $this->assertInstanceOf(Player::class, $john);
+        $jane = $game->getPlayers()->get(1);
+        $this->assertInstanceOf(Player::class, $jane);
+
+        /** @var MessageBusInterface $bus */
+        $bus = $container->get(MessageBusInterface::class);
+
+        /** @var CardRepository $cardRepository */
+        $cardRepository = $container->get(CardRepository::class);
+
+        $province = $cardRepository->findOneBy([
+            'game' => $game,
+            'player' => $john,
+            'title' => 'Ancestral Lands',
+        ]);
+        $this->assertInstanceOf(PhysicalCard::class, $province);
+
+        $message = new ChooseStrongholdProvince(
+            $gameId,
+            $john->getId(),
+            $province->getId()
+        );
+
+        $bus->dispatch($message);
+
+        $this->assertSame('place_provinces', $game->getCurrentPlace());
+
+        $province = $cardRepository->findOneBy([
+            'game' => $game,
+            'player' => $jane,
+            'title' => 'Entrenched Position',
+        ]);
+        $this->assertInstanceOf(PhysicalCard::class, $province);
+
+        $message = new ChooseStrongholdProvince(
+            $gameId,
+            $jane->getId(),
+            $province->getId()
+        );
+
+        $bus->dispatch($message);
 
         $this->assertSame('dynasty_phase_begins', $game->getCurrentPlace());
 
