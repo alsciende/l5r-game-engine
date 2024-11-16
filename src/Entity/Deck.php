@@ -24,9 +24,9 @@ class Deck
     private ?string $name = null;
 
     /**
-     * @var array<int>
+     * @var array<string>
      */
-    #[ORM\Column(type: 'integer[]')]
+    #[ORM\Column(type: 'string[]')]
     private array $content = [];
 
     public function __construct(string $id)
@@ -52,7 +52,7 @@ class Deck
     }
 
     /**
-     * @return int[]
+     * @return string[]
      */
     public function getContent(): array
     {
@@ -60,7 +60,7 @@ class Deck
     }
 
     /**
-     * @param array<int> $content
+     * @param array<string> $content
      *
      * @return $this
      */

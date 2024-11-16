@@ -1,0 +1,30 @@
+{
+    "allowed_clans": [
+        "*"
+    ],
+    "clan": "crane",
+    "cost": 0,
+    "deck_limit": 3,
+    "elements": [],
+    "fate": null,
+    "glory": null,
+    "honor": null,
+    "id": "34-treasured-gift",
+    "influence_cost": 3,
+    "influence_pool": null,
+    "uniqueness": false,
+    "military": null,
+    "military_bonus": "+2",
+    "name": "Treasured Gift",
+    "political": null,
+    "political_bonus": "+3",
+    "role_restriction": null,
+    "side": "conflict",
+    "strength": null,
+    "strength_bonus": null,
+    "text": "Attach to a character an opponent controls.<br>Attached character cannot be declared as an attacker against a province you control.",
+    "traits": [
+        "item"
+    ],
+    "type": "attachment"
+}

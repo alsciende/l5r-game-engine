@@ -1,0 +1,28 @@
+{
+    "allowed_clans": [
+        "*"
+    ],
+    "clan": "neutral",
+    "cost": 0,
+    "deck_limit": 3,
+    "elements": [],
+    "fate": null,
+    "glory": null,
+    "honor": null,
+    "id": "36-make-your-case",
+    "influence_cost": 0,
+    "influence_pool": null,
+    "uniqueness": false,
+    "military": null,
+    "military_bonus": null,
+    "name": "Make Your Case",
+    "political": null,
+    "political_bonus": null,
+    "role_restriction": "seeker",
+    "side": "conflict",
+    "strength": null,
+    "strength_bonus": null,
+    "text": "<em>Seeker</em> role only.<br><b>Action:</b> During a conflict, initiate a [conflict-political] duel against a character your opponent controls of their choice - resolve the duel. Place 1 fate on the duel's winner.",
+    "traits": [],
+    "type": "event"
+}

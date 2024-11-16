@@ -34,16 +34,16 @@ class Game
     private Collection $players;
 
     /**
-     * @var ArrayCollection<int, Card>
+     * @var ArrayCollection<int, PhysicalCard>
      */
-    #[ORM\OneToMany(mappedBy: 'game', targetEntity: Card::class, cascade: ['persist', 'remove'], orphanRemoval: true)]
-    private Collection $cards;
+    #[ORM\OneToMany(mappedBy: 'game', targetEntity: PhysicalCard::class, cascade: ['persist', 'remove'], orphanRemoval: true)]
+    private Collection $physicalCards;
 
     public function __construct(string $id)
     {
         $this->id = $id;
         $this->players = new ArrayCollection();
-        $this->cards = new ArrayCollection();
+        $this->physicalCards = new ArrayCollection();
     }
 
     public function getId(): string
@@ -104,26 +104,26 @@ class Game
     }
 
     /**
-     * @return Collection<int, Card>
+     * @return Collection<int, PhysicalCard>
      */
-    public function getCards(): Collection
+    public function getPhysicalCards(): Collection
     {
-        return $this->cards;
+        return $this->physicalCards;
     }
 
-    public function addCard(Card $card): static
+    public function addCard(PhysicalCard $card): static
     {
-        if (! $this->cards->contains($card)) {
-            $this->cards->add($card);
+        if (! $this->physicalCards->contains($card)) {
+            $this->physicalCards->add($card);
             $card->setGame($this);
         }
 
         return $this;
     }
 
-    public function removeCard(Card $card): static
+    public function removeCard(PhysicalCard $card): static
     {
-        if ($this->cards->removeElement($card)) {
+        if ($this->physicalCards->removeElement($card)) {
             // set the owning side to null (unless already changed)
             if ($card->getGame() === $this) {
                 $card->setGame(null);

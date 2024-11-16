@@ -1,0 +1,32 @@
+{
+    "allowed_clans": [
+        "unicorn"
+    ],
+    "clan": "unicorn",
+    "cost": 4,
+    "deck_limit": 3,
+    "elements": [],
+    "fate": null,
+    "glory": 1,
+    "honor": null,
+    "id": "29-white-horde-vanguard",
+    "influence_cost": null,
+    "influence_pool": null,
+    "uniqueness": false,
+    "military": "5",
+    "military_bonus": null,
+    "name": "White Horde Vanguard",
+    "political": "2",
+    "political_bonus": null,
+    "role_restriction": null,
+    "side": "dynasty",
+    "strength": null,
+    "strength_bonus": null,
+    "text": "No attachments except <em>Weapon</em>.<br>During the first conflict each round, opponents' card effects cannot bow this character or move it.",
+    "traits": [
+        "bushi",
+        "cavalry",
+        "army"
+    ],
+    "type": "character"
+}

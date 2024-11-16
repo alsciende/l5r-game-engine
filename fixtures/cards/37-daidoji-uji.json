@@ -1,0 +1,32 @@
+{
+    "allowed_clans": [
+        "crane"
+    ],
+    "clan": "crane",
+    "cost": 5,
+    "deck_limit": 3,
+    "elements": [],
+    "fate": null,
+    "glory": 2,
+    "honor": null,
+    "id": "37-daidoji-uji",
+    "influence_cost": null,
+    "influence_pool": null,
+    "uniqueness": true,
+    "military": "6",
+    "military_bonus": null,
+    "name": "Daidoji Uji",
+    "political": "2",
+    "political_bonus": null,
+    "role_restriction": null,
+    "side": "dynasty",
+    "strength": null,
+    "strength_bonus": null,
+    "text": "While this character is honored, you may play each card underneath it as if it were in your hand.<br><b>Reaction:</b> After this character enters play - search your conflict deck for 4 cards and place them underneath this character facedown <i>(out of play)</i>. When this character leaves play, remove each facedown card underneath it from the game.",
+    "traits": [
+        "bushi",
+        "daimyo",
+        "shinobi"
+    ],
+    "type": "character"
+}

@@ -1,0 +1,30 @@
+{
+    "allowed_clans": [
+        "*"
+    ],
+    "clan": "dragon",
+    "cost": 2,
+    "deck_limit": 3,
+    "elements": [],
+    "fate": null,
+    "glory": null,
+    "honor": null,
+    "id": "33-waterfall-tattoo",
+    "influence_cost": 2,
+    "influence_pool": null,
+    "uniqueness": false,
+    "military": null,
+    "military_bonus": "+1",
+    "name": "Waterfall Tattoo",
+    "political": null,
+    "political_bonus": "+1",
+    "role_restriction": null,
+    "side": "conflict",
+    "strength": null,
+    "strength_bonus": null,
+    "text": "Attach to a character you control. Attached character gains the <em>Tattooed</em> trait.<br><b>Reaction:</b> After a province you control is revealed - ready attached character.",
+    "traits": [
+        "tattoo"
+    ],
+    "type": "attachment"
+}

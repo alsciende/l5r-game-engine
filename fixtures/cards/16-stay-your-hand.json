@@ -1,0 +1,29 @@
+{
+    "allowed_clans": [
+        "*"
+    ],
+    "clan": "neutral",
+    "cost": 0,
+    "deck_limit": 3,
+    "elements": null,
+    "fate": null,
+    "glory": null,
+    "honor": null,
+    "id": "16-stay-your-hand",
+    "influence_cost": 0,
+    "influence_pool": null,
+    "is_restricted": false,
+    "military": null,
+    "military_bonus": null,
+    "name": "Stay Your Hand",
+    "political": null,
+    "political_bonus": null,
+    "role_restriction": null,
+    "side": "conflict",
+    "strength": null,
+    "strength_bonus": null,
+    "text": "<b>Interrupt:</b> When a duel that targets a character you control would resolve - cancel the duel.<br><i>Errata from RRG v2.0</i>",
+    "traits": [],
+    "type": "event",
+    "uniqueness": false
+}

@@ -4,30 +4,27 @@ declare(strict_types=1);
 
 namespace App\Tests\MessageHandler;
 
-use App\DataFixtures\AppFixtures;
-use App\Entity\Card;
+use App\DataFixtures\StarterCraneDeckTrait;
+use App\DataFixtures\StarterDeckLionTrait;
 use App\Entity\Event;
 use App\Entity\Game;
 use App\Entity\Player;
-use App\Exception\Rules\DuplicateStartingCompanionException;
-use App\Exception\Rules\StartingFellowshipCardIsNotCompanionException;
-use App\Exception\Rules\StartingTwilightCostTooHighException;
 use App\Message\BidTokens;
-use App\Message\ChooseFellowship;
 use App\Message\CreateGame;
 use App\Message\JoinGame;
-use App\Repository\CardRepository;
 use App\Repository\GameRepository;
 use App\Service\StateManager;
 use Doctrine\ORM\EntityManagerInterface;
 use Symfony\Bundle\FrameworkBundle\Test\KernelTestCase;
-use Symfony\Component\Messenger\Exception\HandlerFailedException;
 use Symfony\Component\Messenger\MessageBusInterface;
 use Symfony\Component\Uid\Uuid;
 use Symfony\Component\Workflow\WorkflowInterface;
 
 class MessageHandlerTest extends KernelTestCase
 {
+    use StarterDeckLionTrait;
+    use StarterCraneDeckTrait;
+
     public function testCreateGameHandler(): string
     {
         $kernel = self::bootKernel();
@@ -78,7 +75,7 @@ class MessageHandlerTest extends KernelTestCase
             'John',
             '1',
             null,
-            JoinGame::generateCardsIds(AppFixtures::ARAGON_STARTER_DECK),
+            JoinGame::generateCardsIds($this->getLionStarterCards()),
         ));
 
         $john = $manager->getRepository(Player::class)->find($playerId);
@@ -94,7 +91,7 @@ class MessageHandlerTest extends KernelTestCase
             'Jane',
             '1',
             null,
-            JoinGame::generateCardsIds(AppFixtures::ARAGON_STARTER_DECK),
+            JoinGame::generateCardsIds($this->getCraneStarterCards()),
         ));
 
         $jane = $manager->getRepository(Player::class)->find($playerId);
@@ -156,220 +153,6 @@ class MessageHandlerTest extends KernelTestCase
         ]);
         $this->assertInstanceOf(Event::class, $event);
         $this->assertSame(BidTokens::class, $event->getName());
-
-        return $gameId;
-    }
-
-    /**
-     * @depends testJoinGameHandler
-     */
-    public function testChooseFellowshipInvalidCardHandler(string $gameId): string
-    {
-        $kernel = self::bootKernel();
-        $container = static::getContainer();
-
-        /** @var GameRepository $gameRepository */
-        $gameRepository = $container->get(GameRepository::class);
-        $game = $gameRepository->get($gameId);
-
-        /** @var MessageBusInterface $bus */
-        $bus = $container->get(MessageBusInterface::class);
-
-        $player = $game->getPlayers()->get(0);
-        $this->assertInstanceOf(Player::class, $player);
-
-        /** @var CardRepository $cardRepository */
-        $cardRepository = $container->get(CardRepository::class);
-
-        $lurtz = $cardRepository->findOneBy([
-            'game' => $game,
-            'player' => $player,
-            'source' => 1000127,
-        ]);
-        $this->assertInstanceOf(Card::class, $lurtz);
-
-        $message = new ChooseFellowship(
-            $gameId,
-            $player->getId(),
-            [$lurtz->getId()],
-        );
-
-        try {
-            $bus->dispatch($message); // should throw
-            $this->expectException(HandlerFailedException::class); // will always fail
-        } catch (HandlerFailedException $exception) {
-            $this->assertInstanceOf(StartingFellowshipCardIsNotCompanionException::class, $exception->getPrevious());
-        }
-
-        return $gameId;
-    }
-
-    /**
-     * @depends testJoinGameHandler
-     */
-    public function testChooseFellowshipExcessiveCostHandler(string $gameId): string
-    {
-        $kernel = self::bootKernel();
-        $container = static::getContainer();
-
-        /** @var GameRepository $gameRepository */
-        $gameRepository = $container->get(GameRepository::class);
-        $game = $gameRepository->get($gameId);
-
-        /** @var MessageBusInterface $bus */
-        $bus = $container->get(MessageBusInterface::class);
-
-        $player = $game->getPlayers()->get(0);
-        $this->assertInstanceOf(Player::class, $player);
-
-        /** @var CardRepository $cardRepository */
-        $cardRepository = $container->get(CardRepository::class);
-
-        $frodo = $cardRepository->findOneBy([
-            'game' => $game,
-            'player' => $player,
-            'source' => 1000290,
-        ]);
-        $this->assertInstanceOf(Card::class, $frodo);
-
-        $aragorn = $cardRepository->findOneBy([
-            'game' => $game,
-            'player' => $player,
-            'source' => 1000365,
-        ]);
-        $this->assertInstanceOf(Card::class, $aragorn);
-
-        $boromir = $cardRepository->findOneBy([
-            'game' => $game,
-            'player' => $player,
-            'source' => 1000097,
-        ]);
-        $this->assertInstanceOf(Card::class, $boromir);
-
-        $message = new ChooseFellowship(
-            $gameId,
-            $player->getId(),
-            [$frodo->getId(), $aragorn->getId(), $boromir->getId()],
-        );
-
-        try {
-            $bus->dispatch($message); // should throw
-            $this->expectException(HandlerFailedException::class); // will always fail
-        } catch (HandlerFailedException $exception) {
-            $this->assertInstanceOf(StartingTwilightCostTooHighException::class, $exception->getPrevious());
-        }
-
-        return $gameId;
-    }
-
-    /**
-     * @depends testJoinGameHandler
-     */
-    public function testChooseFellowshipDuplicateCompanionHandler(string $gameId): string
-    {
-        $kernel = self::bootKernel();
-        $container = static::getContainer();
-
-        /** @var GameRepository $gameRepository */
-        $gameRepository = $container->get(GameRepository::class);
-        $game = $gameRepository->get($gameId);
-
-        /** @var MessageBusInterface $bus */
-        $bus = $container->get(MessageBusInterface::class);
-
-        $player = $game->getPlayers()->get(0);
-        $this->assertInstanceOf(Player::class, $player);
-
-        /** @var CardRepository $cardRepository */
-        $cardRepository = $container->get(CardRepository::class);
-
-        $frodo = $cardRepository->findOneBy([
-            'game' => $game,
-            'player' => $player,
-            'source' => 1000290,
-        ]);
-        $this->assertInstanceOf(Card::class, $frodo);
-
-        $aragorns = $cardRepository->findBy([
-            'game' => $game,
-            'player' => $player,
-            'source' => 1000365,
-        ]);
-        $this->assertCount(2, $aragorns);
-
-        $message = new ChooseFellowship(
-            $gameId,
-            $player->getId(),
-            [$frodo->getId(), $aragorns[0]->getId(), $aragorns[1]->getId()],
-        );
-
-        try {
-            $bus->dispatch($message); // should throw
-            $this->expectException(HandlerFailedException::class); // will always fail
-        } catch (HandlerFailedException $exception) {
-            $this->assertInstanceOf(DuplicateStartingCompanionException::class, $exception->getPrevious());
-        }
-
-        return $gameId;
-    }
-
-    /**
-     * @depends testChooseFellowshipDuplicateCompanionHandler
-     */
-    public function testChooseFellowshipHandler(string $gameId): string
-    {
-        $kernel = self::bootKernel();
-        $container = static::getContainer();
-
-        /** @var GameRepository $gameRepository */
-        $gameRepository = $container->get(GameRepository::class);
-        $game = $gameRepository->get($gameId);
-
-        /** @var MessageBusInterface $bus */
-        $bus = $container->get(MessageBusInterface::class);
-
-        foreach ($game->getPlayers() as $index => $player) {
-            $this->assertInstanceOf(Player::class, $player);
-
-            /** @var CardRepository $cardRepository */
-            $cardRepository = $container->get(CardRepository::class);
-
-            // find cards
-            $frodo = $cardRepository->findOneBy([
-                'game' => $game,
-                'player' => $player,
-                'source' => 1000290,
-            ]);
-            $this->assertInstanceOf(Card::class, $frodo);
-            $this->assertSame('draw_deck', $frodo->getCurrentPlace());
-
-            $aragorn = $cardRepository->findOneBy([
-                'game' => $game,
-                'player' => $player,
-                'source' => 1000365,
-            ]);
-            $this->assertInstanceOf(Card::class, $aragorn);
-            $this->assertSame('draw_deck', $aragorn->getCurrentPlace());
-
-            // create ChooseFellowship message with Frodo and Aragorn
-            $message = new ChooseFellowship(
-                $gameId,
-                $player->getId(),
-                [$frodo->getId(), $aragorn->getId()],
-            );
-
-            // dispatch message
-            $bus->dispatch($message);
-
-            // test game state has changed
-            /** @var StateManager $stateManager */
-            $stateManager = $container->get(StateManager::class);
-            $this->assertCount($index + 1, $stateManager->getState($game)->startingFellowships);
-            $this->assertSame('in_play', $frodo->getCurrentPlace());
-            $this->assertSame('in_play', $aragorn->getCurrentPlace());
-        }
-
-        $this->assertSame('resolve_turn_start', $game->getCurrentPlace());
 
         return $gameId;
     }

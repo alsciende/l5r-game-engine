@@ -1,0 +1,31 @@
+{
+    "allowed_clans": [
+        "*"
+    ],
+    "clan": "phoenix",
+    "cost": 0,
+    "deck_limit": 3,
+    "elements": null,
+    "fate": null,
+    "glory": null,
+    "honor": null,
+    "id": "16-unmatched-expertise",
+    "influence_cost": 2,
+    "influence_pool": null,
+    "is_restricted": false,
+    "military": null,
+    "military_bonus": "+1",
+    "name": "Unmatched Expertise",
+    "political": null,
+    "political_bonus": "+1",
+    "role_restriction": "fire",
+    "side": "conflict",
+    "strength": null,
+    "strength_bonus": null,
+    "text": "<b>Fire</b> role only.<br>Attached character cannot receive dishonored status tokens.<br><b>Forced Reaction:</b> After attached character loses a conflict - discard this attachment.<br><i>Errata from RRG v11</i>",
+    "traits": [
+        "technique"
+    ],
+    "type": "attachment",
+    "uniqueness": false
+}

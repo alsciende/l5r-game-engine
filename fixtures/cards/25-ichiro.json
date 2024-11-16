@@ -1,0 +1,33 @@
+{
+    "allowed_clans": [
+        "*"
+    ],
+    "clan": "neutral",
+    "cost": 3,
+    "deck_limit": 3,
+    "elements": null,
+    "fate": null,
+    "glory": 1,
+    "honor": null,
+    "id": "25-ichiro",
+    "influence_cost": null,
+    "influence_pool": null,
+    "is_restricted": false,
+    "military": "3",
+    "military_bonus": null,
+    "name": "Ichirō",
+    "political": "2",
+    "political_bonus": null,
+    "role_restriction": null,
+    "side": "dynasty",
+    "strength": null,
+    "strength_bonus": null,
+    "text": "Each character with 1 or more attachments cannot be honored or dishonored.",
+    "traits": [
+        "bushi",
+        "heretic",
+        "ronin"
+    ],
+    "type": "character",
+    "uniqueness": true
+}

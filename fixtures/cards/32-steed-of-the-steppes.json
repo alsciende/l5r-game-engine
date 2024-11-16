@@ -1,0 +1,30 @@
+{
+    "allowed_clans": [
+        "*"
+    ],
+    "clan": "unicorn",
+    "cost": 1,
+    "deck_limit": 3,
+    "elements": [],
+    "fate": null,
+    "glory": null,
+    "honor": null,
+    "id": "32-steed-of-the-steppes",
+    "influence_cost": 1,
+    "influence_pool": null,
+    "uniqueness": false,
+    "military": null,
+    "military_bonus": "+1",
+    "name": "Steed of the Steppes",
+    "political": null,
+    "political_bonus": "+0",
+    "role_restriction": null,
+    "side": "conflict",
+    "strength": null,
+    "strength_bonus": null,
+    "text": "Attached character gains the <em>Cavalry</em> trait.<br><b>Action:</b> If an opponent controls 3 or more faceup provinces, sacrifice this attachment - ready attached character.",
+    "traits": [
+        "creature"
+    ],
+    "type": "attachment"
+}

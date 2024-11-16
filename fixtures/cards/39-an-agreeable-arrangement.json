@@ -1,0 +1,28 @@
+{
+    "allowed_clans": [
+        "crane"
+    ],
+    "clan": "crane",
+    "cost": 0,
+    "deck_limit": 3,
+    "elements": [],
+    "fate": null,
+    "glory": null,
+    "honor": null,
+    "id": "39-an-agreeable-arrangement",
+    "influence_cost": null,
+    "influence_pool": null,
+    "uniqueness": false,
+    "military": null,
+    "military_bonus": null,
+    "name": "An Agreeable Arrangement",
+    "political": null,
+    "political_bonus": null,
+    "role_restriction": null,
+    "side": "dynasty",
+    "strength": null,
+    "strength_bonus": null,
+    "text": "<b>Action:</b> Give control of a <i>(friendly)</i> ready character with printed cost 2 or higher to an opponent. Choose a non-<em>Champion</em> character that opponent controls - bow the chosen character.",
+    "traits": [],
+    "type": "event"
+}

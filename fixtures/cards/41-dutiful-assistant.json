@@ -1,0 +1,30 @@
+{
+    "allowed_clans": [
+        "*"
+    ],
+    "clan": "crane",
+    "cost": 1,
+    "deck_limit": 3,
+    "elements": [],
+    "fate": null,
+    "glory": null,
+    "honor": null,
+    "id": "41-dutiful-assistant",
+    "influence_cost": 2,
+    "influence_pool": null,
+    "uniqueness": false,
+    "military": null,
+    "military_bonus": "+0",
+    "name": "Dutiful Assistant",
+    "political": null,
+    "political_bonus": "+0",
+    "role_restriction": null,
+    "side": "conflict",
+    "strength": null,
+    "strength_bonus": null,
+    "text": "Ancestral. <i>(When attached card leaves play, return this card to your hand.)</i><br>While attached character is honored, it gets +2 glory.",
+    "traits": [
+        "follower"
+    ],
+    "type": "attachment"
+}

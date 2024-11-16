@@ -1,0 +1,30 @@
+{
+    "allowed_clans": [
+        "*"
+    ],
+    "clan": "scorpion",
+    "cost": 1,
+    "deck_limit": 3,
+    "elements": [],
+    "fate": null,
+    "glory": 0,
+    "honor": null,
+    "id": "37-messenger-of-misery",
+    "influence_cost": 1,
+    "influence_pool": null,
+    "uniqueness": false,
+    "military": "0",
+    "military_bonus": null,
+    "name": "Messenger of Misery",
+    "political": "1",
+    "political_bonus": null,
+    "role_restriction": null,
+    "side": "conflict",
+    "strength": null,
+    "strength_bonus": null,
+    "text": "Courtesy. <i>(When this character leaves play, gain 1 fate)</i>",
+    "traits": [
+        "courtier"
+    ],
+    "type": "character"
+}

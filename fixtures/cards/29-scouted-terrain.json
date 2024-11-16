@@ -1,0 +1,28 @@
+{
+    "allowed_clans": [
+        "*"
+    ],
+    "clan": "unicorn",
+    "cost": 4,
+    "deck_limit": 3,
+    "elements": [],
+    "fate": null,
+    "glory": null,
+    "honor": null,
+    "id": "29-scouted-terrain",
+    "influence_cost": 2,
+    "influence_pool": null,
+    "uniqueness": false,
+    "military": null,
+    "military_bonus": null,
+    "name": "Scouted Terrain",
+    "political": null,
+    "political_bonus": null,
+    "role_restriction": "void",
+    "side": "conflict",
+    "strength": null,
+    "strength_bonus": null,
+    "text": "<em>Void</em> role only.<br><b>Action:</b> During the conflict phase, choose an opponent. If that opponent controls at least 4 faceup provinces - you may attack that player's stronghold this phase.",
+    "traits": [],
+    "type": "event"
+}

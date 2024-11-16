@@ -1,0 +1,31 @@
+{
+    "allowed_clans": [
+        "*"
+    ],
+    "clan": "scorpion",
+    "cost": 1,
+    "deck_limit": 3,
+    "elements": null,
+    "fate": null,
+    "glory": 0,
+    "honor": null,
+    "id": "15-opium-wastrel",
+    "influence_cost": 2,
+    "influence_pool": null,
+    "is_restricted": false,
+    "military": "1",
+    "military_bonus": null,
+    "name": "Opium Wastrel",
+    "political": "1",
+    "political_bonus": null,
+    "role_restriction": null,
+    "side": "conflict",
+    "strength": null,
+    "strength_bonus": null,
+    "text": "Play only if you are less honorable than an opponent.<br><b>Reaction:</b> After this character enters play during a conflict, choose a participating character – set that character’s glory to 0 until the end of the conflict.",
+    "traits": [
+        "peasant"
+    ],
+    "type": "character",
+    "uniqueness": false
+}

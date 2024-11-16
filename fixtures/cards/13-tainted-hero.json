@@ -1,0 +1,33 @@
+{
+    "allowed_clans": [
+        "crab"
+    ],
+    "clan": "crab",
+    "cost": 3,
+    "deck_limit": 3,
+    "elements": null,
+    "fate": null,
+    "glory": 0,
+    "honor": null,
+    "id": "13-tainted-hero",
+    "influence_cost": null,
+    "influence_pool": null,
+    "is_restricted": false,
+    "military": "6",
+    "military_bonus": null,
+    "name": "Tainted Hero",
+    "political": null,
+    "political_bonus": null,
+    "role_restriction": null,
+    "side": "dynasty",
+    "strength": null,
+    "strength_bonus": null,
+    "text": "This character cannot be declared as an attacker or defender.<br><b>Action:</b> Sacrifice a <i>{friendly)</i> character – until the end of the phase, treat this character's printed text box as if it were blank (except for <em>Traits</em>).",
+    "traits": [
+        "bushi",
+        "berserker",
+        "shadowlands"
+    ],
+    "type": "character",
+    "uniqueness": false
+}

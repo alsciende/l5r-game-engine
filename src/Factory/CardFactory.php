@@ -4,41 +4,44 @@ declare(strict_types=1);
 
 namespace App\Factory;
 
-use App\Entity\Card;
-use App\Service\CardDataProvider;
+use App\Entity\LogicalCard;
+use App\Entity\PhysicalCard;
+use App\Exception\Data\LogicalCardNotFoundException;
+use App\Repository\LogicalCardRepository;
 use Symfony\Component\Workflow\Registry;
 
 readonly class CardFactory
 {
     public function __construct(
-        private CardDataProvider $provider,
+        private LogicalCardRepository $cardRepository,
         private Registry $registry,
     ) {
     }
 
-    public function createCard(string $cardId, int $source): Card
+    public function createCard(string $physicalCardId, string $logicalCardId): PhysicalCard
     {
-        $cardData = $this->provider->getCardData($source);
+        $logicalCard = $this->cardRepository->find($logicalCardId);
+        if (! $logicalCard instanceof LogicalCard) {
+            throw new LogicalCardNotFoundException($logicalCardId);
+        }
 
-        $classname = $this->getClassname($cardData->type);
+        $classname = $this->getClassname($logicalCard->getSide()->value);
 
-        /** @var Card $card */
-        $card = new $classname($cardId, $source);
-        $card->setImage($cardData->image);
-        $card->setTitle($cardData->title);
-        $card->setSubtitle($cardData->subtitle);
+        /** @var PhysicalCard $card */
+        $card = new $classname($physicalCardId, $logicalCardId);
+        $card->setTitle($logicalCard->getName());
 
         $this->registry->get($card)->getMarking($card);
 
         return $card;
     }
 
-    private function getClassname(string $type): string
+    private function getClassname(string $side): string
     {
-        $classname = Card::DISCRIMINATOR_MAP[$type] ?? null;
+        $classname = PhysicalCard::DISCRIMINATOR_MAP[$side] ?? null;
 
         if ($classname === null) {
-            throw new \LogicException("Unknown card type {$type}");
+            throw new \LogicException("Unknown card side {$side}");
         }
 
         return $classname;

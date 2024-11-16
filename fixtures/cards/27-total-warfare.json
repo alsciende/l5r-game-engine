@@ -1,0 +1,31 @@
+{
+    "allowed_clans": [
+        "*"
+    ],
+    "clan": "lion",
+    "cost": 2,
+    "deck_limit": 3,
+    "elements": null,
+    "fate": null,
+    "glory": null,
+    "honor": null,
+    "id": "27-total-warfare",
+    "influence_cost": 2,
+    "influence_pool": null,
+    "is_restricted": false,
+    "military": null,
+    "military_bonus": "-",
+    "name": "Total Warfare",
+    "political": null,
+    "political_bonus": "-",
+    "role_restriction": null,
+    "side": "conflict",
+    "strength": null,
+    "strength_bonus": null,
+    "text": "Attach to an unbroken province.<br>Limit 1 <em>Battlefield</em> attachment per province.<br><b>Forced Reaction:</b> After a player loses a conflict at attached province - that player must sacrifice a participating character.",
+    "traits": [
+        "battlefield"
+    ],
+    "type": "attachment",
+    "uniqueness": false
+}

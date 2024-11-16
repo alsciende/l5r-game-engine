@@ -1,0 +1,31 @@
+{
+    "allowed_clans": [
+        "crab"
+    ],
+    "clan": "crab",
+    "cost": 3,
+    "deck_limit": 3,
+    "elements": [],
+    "fate": null,
+    "glory": 1,
+    "honor": null,
+    "id": "32-kuni-purifier",
+    "influence_cost": null,
+    "influence_pool": null,
+    "uniqueness": false,
+    "military": "3",
+    "military_bonus": null,
+    "name": "Kuni Purifier",
+    "political": "3",
+    "political_bonus": null,
+    "role_restriction": null,
+    "side": "dynasty",
+    "strength": null,
+    "strength_bonus": null,
+    "text": "<b>Reaction:</b> After an opponent passes on declaring a conflict - that opponent discards 1 random card from their hand.",
+    "traits": [
+        "shugenja",
+        "earth"
+    ],
+    "type": "character"
+}

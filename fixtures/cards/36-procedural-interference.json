@@ -1,0 +1,28 @@
+{
+    "allowed_clans": [
+        "lion"
+    ],
+    "clan": "lion",
+    "cost": 0,
+    "deck_limit": 3,
+    "elements": [],
+    "fate": null,
+    "glory": null,
+    "honor": null,
+    "id": "36-procedural-interference",
+    "influence_cost": null,
+    "influence_pool": null,
+    "uniqueness": false,
+    "military": null,
+    "military_bonus": null,
+    "name": "Procedural Interference",
+    "political": null,
+    "political_bonus": null,
+    "role_restriction": null,
+    "side": "dynasty",
+    "strength": null,
+    "strength_bonus": null,
+    "text": "<b>Action:</b> Choose an opponent's province. That opponent selects one - either discard each card in that province, or you gain 2 honor.",
+    "traits": [],
+    "type": "event"
+}

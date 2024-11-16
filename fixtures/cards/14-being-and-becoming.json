@@ -1,0 +1,31 @@
+{
+    "allowed_clans": [
+        "*"
+    ],
+    "clan": "dragon",
+    "cost": 2,
+    "deck_limit": 3,
+    "elements": null,
+    "fate": null,
+    "glory": null,
+    "honor": null,
+    "id": "14-being-and-becoming",
+    "influence_cost": 2,
+    "influence_pool": null,
+    "is_restricted": false,
+    "military": null,
+    "military_bonus": "+1",
+    "name": "Being and Becoming",
+    "political": null,
+    "political_bonus": "+1",
+    "role_restriction": "void",
+    "side": "conflict",
+    "strength": null,
+    "strength_bonus": null,
+    "text": "<em>Void</em> role only. Attach to a character you control.<br><b>Action:</b> Bow attached character, choose an unclaimed ring – move each fate from that ring to attached character.",
+    "traits": [
+        "condition"
+    ],
+    "type": "attachment",
+    "uniqueness": false
+}

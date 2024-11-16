@@ -1,0 +1,30 @@
+{
+    "allowed_clans": [
+        "*"
+    ],
+    "clan": "crab",
+    "cost": 1,
+    "deck_limit": 3,
+    "elements": [],
+    "fate": null,
+    "glory": null,
+    "honor": null,
+    "id": "34-inventive-buttressing",
+    "influence_cost": 2,
+    "influence_pool": null,
+    "uniqueness": false,
+    "military": null,
+    "military_bonus": null,
+    "name": "Inventive Buttressing",
+    "political": null,
+    "political_bonus": null,
+    "role_restriction": null,
+    "side": "conflict",
+    "strength": null,
+    "strength_bonus": null,
+    "text": "Attach to an unbroken province you control.<br>Attached province gets +3 strength during [conflict-military] conflicts.",
+    "traits": [
+        "fortification"
+    ],
+    "type": "attachment"
+}

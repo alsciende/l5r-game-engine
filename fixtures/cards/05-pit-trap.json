@@ -1,0 +1,32 @@
+{
+    "allowed_clans": [
+        "*"
+    ],
+    "clan": "crab",
+    "cost": 3,
+    "deck_limit": 3,
+    "elements": null,
+    "fate": null,
+    "glory": null,
+    "honor": null,
+    "id": "05-pit-trap",
+    "influence_cost": 3,
+    "influence_pool": null,
+    "is_restricted": false,
+    "military": null,
+    "military_bonus": "-1",
+    "name": "Pit Trap",
+    "political": null,
+    "political_bonus": "-1",
+    "role_restriction": null,
+    "side": "conflict",
+    "strength": null,
+    "strength_bonus": null,
+    "text": "Attach to a character.<br>Play only on an attacking character.<br>Attached character does not ready during the regroup phase.<br><i>Errata from RRG v1.2</i>",
+    "traits": [
+        "item",
+        "trap"
+    ],
+    "type": "attachment",
+    "uniqueness": false
+}

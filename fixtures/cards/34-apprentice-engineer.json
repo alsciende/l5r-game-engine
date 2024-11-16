@@ -1,0 +1,31 @@
+{
+    "allowed_clans": [
+        "*"
+    ],
+    "clan": "crab",
+    "cost": 2,
+    "deck_limit": 3,
+    "elements": [],
+    "fate": null,
+    "glory": 0,
+    "honor": null,
+    "id": "34-apprentice-engineer",
+    "influence_cost": 2,
+    "influence_pool": null,
+    "uniqueness": false,
+    "military": "2",
+    "military_bonus": null,
+    "name": "Apprentice Engineer",
+    "political": "1",
+    "political_bonus": null,
+    "role_restriction": null,
+    "side": "conflict",
+    "strength": null,
+    "strength_bonus": null,
+    "text": "<b>Reaction:</b> After this character enters play, choose a holding in your dynasty discard pile – Put that holding into play in one of your unbroken non-stronghold provinces, discarding each other card in that province.",
+    "traits": [
+        "bushi",
+        "engineer"
+    ],
+    "type": "character"
+}

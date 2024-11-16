@@ -1,0 +1,33 @@
+{
+    "allowed_clans": [
+        "*"
+    ],
+    "clan": "neutral",
+    "cost": null,
+    "deck_limit": 1,
+    "elements": [
+        "earth"
+    ],
+    "fate": null,
+    "glory": null,
+    "honor": null,
+    "id": "20-festival-of-the-departed",
+    "influence_cost": null,
+    "influence_pool": null,
+    "is_restricted": false,
+    "military": null,
+    "military_bonus": null,
+    "name": "Festival of the Departed",
+    "political": null,
+    "political_bonus": null,
+    "role_restriction": "keeper",
+    "side": "province",
+    "strength": "4",
+    "strength_bonus": null,
+    "text": "<em>Keeper</em> role only.<br>During conflicts at this province, characters cannot have their skills increased by the effects of event cards.",
+    "traits": [
+        "festival"
+    ],
+    "type": "province",
+    "uniqueness": false
+}

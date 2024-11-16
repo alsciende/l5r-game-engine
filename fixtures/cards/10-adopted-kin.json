@@ -1,0 +1,31 @@
+{
+    "allowed_clans": [
+        "*"
+    ],
+    "clan": "dragon",
+    "cost": 0,
+    "deck_limit": 3,
+    "elements": null,
+    "fate": null,
+    "glory": null,
+    "honor": null,
+    "id": "10-adopted-kin",
+    "influence_cost": 1,
+    "influence_pool": null,
+    "is_restricted": false,
+    "military": null,
+    "military_bonus": "+0",
+    "name": "Adopted Kin",
+    "political": null,
+    "political_bonus": "+0",
+    "role_restriction": "fire",
+    "side": "conflict",
+    "strength": null,
+    "strength_bonus": null,
+    "text": "<em>Fire</em> role only. Limit 1 per character.<br>Each other attachment on attached character gains ancestral.",
+    "traits": [
+        "condition"
+    ],
+    "type": "attachment",
+    "uniqueness": false
+}

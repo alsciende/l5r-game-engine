@@ -1,0 +1,30 @@
+{
+    "allowed_clans": [
+        "phoenix"
+    ],
+    "clan": "phoenix",
+    "cost": 2,
+    "deck_limit": 3,
+    "elements": [],
+    "fate": null,
+    "glory": 0,
+    "honor": null,
+    "id": "38-kaito-mai",
+    "influence_cost": null,
+    "influence_pool": null,
+    "uniqueness": true,
+    "military": "2",
+    "military_bonus": null,
+    "name": "Kaito Mai",
+    "political": "2",
+    "political_bonus": null,
+    "role_restriction": null,
+    "side": "dynasty",
+    "strength": null,
+    "strength_bonus": null,
+    "text": "Dire - This character gets +3 glory.<br><b>Reaction:</b> After 1 or more fate is removed from this character outside the fate phase, choose another character - remove 1 fate from that character.",
+    "traits": [
+        "monk"
+    ],
+    "type": "character"
+}

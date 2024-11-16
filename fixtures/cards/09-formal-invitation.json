@@ -1,0 +1,31 @@
+{
+    "allowed_clans": [
+        "*"
+    ],
+    "clan": "crane",
+    "cost": 0,
+    "deck_limit": 3,
+    "elements": null,
+    "fate": null,
+    "glory": null,
+    "honor": null,
+    "id": "09-formal-invitation",
+    "influence_cost": 3,
+    "influence_pool": null,
+    "is_restricted": false,
+    "military": null,
+    "military_bonus": "+0",
+    "name": "Formal Invitation",
+    "political": null,
+    "political_bonus": "+1",
+    "role_restriction": null,
+    "side": "conflict",
+    "strength": null,
+    "strength_bonus": null,
+    "text": "Attach to a character with glory 2 or higher.<br><b>Action:</b> During a [conflict-political] conflict – move attached character to the conflict.",
+    "traits": [
+        "item"
+    ],
+    "type": "attachment",
+    "uniqueness": false
+}

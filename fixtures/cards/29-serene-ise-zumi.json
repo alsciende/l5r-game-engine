@@ -1,0 +1,31 @@
+{
+    "allowed_clans": [
+        "*"
+    ],
+    "clan": "dragon",
+    "cost": 3,
+    "deck_limit": 3,
+    "elements": [],
+    "fate": null,
+    "glory": 1,
+    "honor": null,
+    "id": "29-serene-ise-zumi",
+    "influence_cost": 1,
+    "influence_pool": null,
+    "uniqueness": false,
+    "military": "2",
+    "military_bonus": null,
+    "name": "Serene Ise Zumi",
+    "political": "2",
+    "political_bonus": null,
+    "role_restriction": null,
+    "side": "conflict",
+    "strength": null,
+    "strength_bonus": null,
+    "text": "Sincerity. <i>(When this character leaves play, draw 1 card.)</i><br>You may play this character as an attachment on a character you control, reducing its cost by 2. If you do, it loses sincerity and gains the text: \"<b>Action:</b> During a conflict - move attached character home.\"",
+    "traits": [
+        "monk",
+        "tattooed"
+    ],
+    "type": "character"
+}

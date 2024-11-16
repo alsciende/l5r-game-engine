@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 namespace App\Tests\EventDispatcher;
 
 use Symfony\Component\EventDispatcher\EventSubscriberInterface;
@@ -9,9 +11,8 @@ readonly class TestEventSubscriber implements EventSubscriberInterface
 {
     public function __construct(
         private TestAccumulator $accumulator,
-        private int             $counter,
-    )
-    {
+        private int $counter,
+    ) {
     }
 
     public function onFuBar(Event $event): void

@@ -1,0 +1,28 @@
+{
+    "allowed_clans": [
+        "*"
+    ],
+    "clan": "scorpion",
+    "cost": 0,
+    "deck_limit": 3,
+    "elements": [],
+    "fate": null,
+    "glory": null,
+    "honor": null,
+    "id": "41-subterfuge",
+    "influence_cost": 1,
+    "influence_pool": null,
+    "uniqueness": false,
+    "military": null,
+    "military_bonus": null,
+    "name": "Subterfuge",
+    "political": null,
+    "political_bonus": null,
+    "role_restriction": null,
+    "side": "conflict",
+    "strength": null,
+    "strength_bonus": null,
+    "text": "<b>Interrupt:</b> When an opponent would draw 1 or more cards outside the draw phase, if you are less honorable than that opponent - discard up to 3 of those cards instead.",
+    "traits": [],
+    "type": "event"
+}

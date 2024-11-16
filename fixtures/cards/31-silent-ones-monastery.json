@@ -1,0 +1,33 @@
+{
+    "allowed_clans": [
+        "scorpion"
+    ],
+    "clan": "scorpion",
+    "cost": null,
+    "deck_limit": 1,
+    "elements": [
+        "air",
+        "water"
+    ],
+    "fate": null,
+    "glory": null,
+    "honor": null,
+    "id": "31-silent-ones-monastery",
+    "influence_cost": null,
+    "influence_pool": null,
+    "uniqueness": true,
+    "military": null,
+    "military_bonus": null,
+    "name": "Silent Ones Monastery",
+    "political": null,
+    "political_bonus": null,
+    "role_restriction": null,
+    "side": "province",
+    "strength": "5",
+    "strength_bonus": null,
+    "text": "Eminent. <i>(This province starts the game faceup and cannot be turned facedown. It cannot be a stronghold province.)</i><br>Each opponent cannot gain more than 2 honor each phase.",
+    "traits": [
+        "temple"
+    ],
+    "type": "province"
+}

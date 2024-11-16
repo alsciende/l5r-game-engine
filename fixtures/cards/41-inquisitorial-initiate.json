@@ -1,0 +1,30 @@
+{
+    "allowed_clans": [
+        "phoenix"
+    ],
+    "clan": "phoenix",
+    "cost": 1,
+    "deck_limit": 3,
+    "elements": [],
+    "fate": null,
+    "glory": 1,
+    "honor": null,
+    "id": "41-inquisitorial-initiate",
+    "influence_cost": null,
+    "influence_pool": null,
+    "uniqueness": false,
+    "military": "0",
+    "military_bonus": null,
+    "name": "Inquisitorial Initiate",
+    "political": "2",
+    "political_bonus": null,
+    "role_restriction": null,
+    "side": "dynasty",
+    "strength": null,
+    "strength_bonus": null,
+    "text": "<b>Reaction:</b> After this character wins a conflict - your opponent reveals X cards in their hand, where X is the number of characters they control with no fate on them. Choose and discard 1 of the revealed cards.",
+    "traits": [
+        "courtier"
+    ],
+    "type": "character"
+}

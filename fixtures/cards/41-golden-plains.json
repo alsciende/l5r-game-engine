@@ -1,0 +1,30 @@
+{
+    "allowed_clans": [
+        "unicorn"
+    ],
+    "clan": "unicorn",
+    "cost": null,
+    "deck_limit": 1,
+    "elements": [
+        "water"
+    ],
+    "fate": null,
+    "glory": null,
+    "honor": null,
+    "id": "41-golden-plains",
+    "influence_cost": null,
+    "influence_pool": null,
+    "uniqueness": false,
+    "military": null,
+    "military_bonus": null,
+    "name": "Golden Plains",
+    "political": null,
+    "political_bonus": null,
+    "role_restriction": null,
+    "side": "province",
+    "strength": "4",
+    "strength_bonus": null,
+    "text": "While your stronghold is Golden Plains Outpost, each character you control gains the <em>Cavalry</em> trait.<br><b>Reaction:</b> After an attack is declared against this province, choose another eligible province you control - move the conflict to that province.",
+    "traits": [],
+    "type": "province"
+}

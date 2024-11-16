@@ -1,0 +1,32 @@
+{
+    "allowed_clans": [
+        "scorpion"
+    ],
+    "clan": "scorpion",
+    "cost": 5,
+    "deck_limit": 3,
+    "elements": [],
+    "fate": null,
+    "glory": 2,
+    "honor": null,
+    "id": "39-yogo-junzo",
+    "influence_cost": null,
+    "influence_pool": null,
+    "uniqueness": true,
+    "military": "5",
+    "military_bonus": null,
+    "name": "Yogo Junzo",
+    "political": "4",
+    "political_bonus": null,
+    "role_restriction": null,
+    "side": "dynasty",
+    "strength": null,
+    "strength_bonus": null,
+    "text": "Dire - this character gains: \"<b>Action:</b> Choose a character - discard all fate from that character.\"<br><b>Action:</b> Choose a character you control - move any amount of fate from that character to your fate pool.",
+    "traits": [
+        "shugenja",
+        "air",
+        "daimyo"
+    ],
+    "type": "character"
+}

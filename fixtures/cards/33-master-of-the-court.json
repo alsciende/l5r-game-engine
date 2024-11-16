@@ -1,0 +1,30 @@
+{
+    "allowed_clans": [
+        "crane"
+    ],
+    "clan": "crane",
+    "cost": 4,
+    "deck_limit": 3,
+    "elements": [],
+    "fate": null,
+    "glory": 1,
+    "honor": null,
+    "id": "33-master-of-the-court",
+    "influence_cost": null,
+    "influence_pool": null,
+    "uniqueness": false,
+    "military": "1",
+    "military_bonus": null,
+    "name": "Master of the Court",
+    "political": "4",
+    "political_bonus": null,
+    "role_restriction": null,
+    "side": "dynasty",
+    "strength": null,
+    "strength_bonus": null,
+    "text": "Covert. <i>(When this character attacks, choose one character without covert. That character cannot be declared as a defender.)</i><br><b>Interrupt:</b> When the effects of an event would initiate, discard an honored status token from this character - cancel those effects.",
+    "traits": [
+        "courtier"
+    ],
+    "type": "character"
+}

@@ -1,0 +1,31 @@
+{
+    "allowed_clans": [
+        "*"
+    ],
+    "clan": "dragon",
+    "cost": 0,
+    "deck_limit": 3,
+    "elements": [],
+    "fate": null,
+    "glory": null,
+    "honor": null,
+    "id": "41-belief-in-the-little-teacher",
+    "influence_cost": 2,
+    "influence_pool": null,
+    "uniqueness": false,
+    "military": null,
+    "military_bonus": "+0",
+    "name": "Belief in the Little Teacher",
+    "political": null,
+    "political_bonus": "+0",
+    "role_restriction": null,
+    "side": "conflict",
+    "strength": null,
+    "strength_bonus": null,
+    "text": "Ancestral.<br>Attached character gains: \"<b>Action:</b> Discard a status token from this character.\"",
+    "traits": [
+        "condition",
+        "heresy"
+    ],
+    "type": "attachment"
+}

@@ -1,0 +1,33 @@
+{
+    "allowed_clans": [
+        "crab"
+    ],
+    "clan": "crab",
+    "cost": null,
+    "deck_limit": 1,
+    "elements": [
+        "earth",
+        "water"
+    ],
+    "fate": null,
+    "glory": null,
+    "honor": null,
+    "id": "30-shinsei-s-last-hope",
+    "influence_cost": null,
+    "influence_pool": null,
+    "uniqueness": true,
+    "military": null,
+    "military_bonus": null,
+    "name": "Shinsei's Last Hope",
+    "political": null,
+    "political_bonus": null,
+    "role_restriction": null,
+    "side": "province",
+    "strength": "3",
+    "strength_bonus": null,
+    "text": "Eminent. <i>(This province starts the game faceup and cannot be turned facedown. It cannot be a stronghold province.)</i><br>Each character played from this province costs 2 less to play and enters play dishonored.",
+    "traits": [
+        "village"
+    ],
+    "type": "province"
+}

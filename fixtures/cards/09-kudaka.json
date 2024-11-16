@@ -1,0 +1,33 @@
+{
+    "allowed_clans": [
+        "*"
+    ],
+    "clan": "neutral",
+    "cost": 4,
+    "deck_limit": 3,
+    "elements": null,
+    "fate": null,
+    "glory": 1,
+    "honor": null,
+    "id": "09-kudaka",
+    "influence_cost": null,
+    "influence_pool": null,
+    "is_restricted": false,
+    "military": "3",
+    "military_bonus": null,
+    "name": "Kudaka",
+    "political": "4",
+    "political_bonus": null,
+    "role_restriction": null,
+    "side": "dynasty",
+    "strength": null,
+    "strength_bonus": null,
+    "text": "<b>Reaction:</b> After you claim the [element-air] ring – gain 1 fate and draw 1 card. (Limit twice per round.)",
+    "traits": [
+        "shugenja",
+        "air",
+        "mantis-clan"
+    ],
+    "type": "character",
+    "uniqueness": true
+}

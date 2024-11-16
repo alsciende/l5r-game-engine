@@ -1,0 +1,32 @@
+{
+    "allowed_clans": [
+        "scorpion"
+    ],
+    "clan": "scorpion",
+    "cost": 2,
+    "deck_limit": 3,
+    "elements": [],
+    "fate": null,
+    "glory": 1,
+    "honor": null,
+    "id": "32-shadow-stalker",
+    "influence_cost": null,
+    "influence_pool": null,
+    "uniqueness": false,
+    "military": "2",
+    "military_bonus": null,
+    "name": "Shadow Stalker",
+    "political": "0",
+    "political_bonus": null,
+    "role_restriction": null,
+    "side": "dynasty",
+    "strength": null,
+    "strength_bonus": null,
+    "text": "Rally. <i>(After this card is revealed in a province, add the top card of your dynasty deck to the province, faceup.)</i><br>While you have 6 or fewer honor, this character gets +2[conflict-military] and +2[conflict-political].",
+    "traits": [
+        "bushi",
+        "shadow",
+        "shinobi"
+    ],
+    "type": "character"
+}

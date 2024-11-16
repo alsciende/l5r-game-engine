@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 namespace App\Tests\EventDispatcher;
 
 use Symfony\Bundle\FrameworkBundle\Test\KernelTestCase;
@@ -9,8 +11,7 @@ use Symfony\Contracts\EventDispatcher\Event;
 class EventDispatcherTest extends KernelTestCase
 {
     /**
-     * Testing that when we add a subscriber to the container event_dispatcher, it is called
-     * @return void
+     * Testing that when we add a subscriber to the container event_dispatcher, it is called.
      */
     public function testRegistered(): void
     {
@@ -22,7 +23,7 @@ class EventDispatcherTest extends KernelTestCase
 
         $accumulator = new TestAccumulator();
 
-        for($i = 0; $i < 4; $i++) {
+        for ($i = 0; $i < 4; ++$i) {
             $dispatcherService->addSubscriber(new TestEventSubscriber($accumulator, $i));
         }
 

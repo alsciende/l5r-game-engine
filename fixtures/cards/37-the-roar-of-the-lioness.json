@@ -1,0 +1,30 @@
+{
+    "allowed_clans": [
+        "lion"
+    ],
+    "clan": "lion",
+    "cost": null,
+    "deck_limit": 1,
+    "elements": [
+        "water"
+    ],
+    "fate": null,
+    "glory": null,
+    "honor": null,
+    "id": "37-the-roar-of-the-lioness",
+    "influence_cost": null,
+    "influence_pool": null,
+    "uniqueness": false,
+    "military": null,
+    "military_bonus": null,
+    "name": "The Roar of the Lioness",
+    "political": null,
+    "political_bonus": null,
+    "role_restriction": null,
+    "side": "province",
+    "strength": "X",
+    "strength_bonus": null,
+    "text": "X is equal to half the amount of honor in your honor pool, rounded up.",
+    "traits": [],
+    "type": "province"
+}

@@ -1,0 +1,31 @@
+{
+    "allowed_clans": [
+        "unicorn"
+    ],
+    "clan": "unicorn",
+    "cost": 2,
+    "deck_limit": 3,
+    "elements": [],
+    "fate": null,
+    "glory": 0,
+    "honor": null,
+    "id": "41-moto-conqueror",
+    "influence_cost": null,
+    "influence_pool": null,
+    "uniqueness": false,
+    "military": "4",
+    "military_bonus": null,
+    "name": "Moto Conqueror",
+    "political": null,
+    "political_bonus": null,
+    "role_restriction": null,
+    "side": "dynasty",
+    "strength": null,
+    "strength_bonus": null,
+    "text": null,
+    "traits": [
+        "bushi",
+        "cavalry"
+    ],
+    "type": "character"
+}

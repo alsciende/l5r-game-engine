@@ -1,0 +1,31 @@
+{
+    "allowed_clans": [
+        "scorpion"
+    ],
+    "clan": "scorpion",
+    "cost": 6,
+    "deck_limit": 3,
+    "elements": null,
+    "fate": null,
+    "glory": 0,
+    "honor": null,
+    "id": "15-bayushi-s-whisperers",
+    "influence_cost": null,
+    "influence_pool": null,
+    "is_restricted": false,
+    "military": "3",
+    "military_bonus": null,
+    "name": "Bayushi's Whisperers",
+    "political": "6",
+    "political_bonus": null,
+    "role_restriction": null,
+    "side": "dynasty",
+    "strength": null,
+    "strength_bonus": null,
+    "text": "No attachments.<br><b>Action:</b> During a conflict – look at an opponent’s hand, then name a card. That player cannot play copies of the named card this phase.",
+    "traits": [
+        "informant"
+    ],
+    "type": "character",
+    "uniqueness": true
+}

@@ -1,0 +1,31 @@
+{
+    "allowed_clans": [
+        "*"
+    ],
+    "clan": "scorpion",
+    "cost": 1,
+    "deck_limit": 3,
+    "elements": [],
+    "fate": null,
+    "glory": null,
+    "honor": null,
+    "id": "39-shadow-step",
+    "influence_cost": 1,
+    "influence_pool": null,
+    "uniqueness": false,
+    "military": null,
+    "military_bonus": null,
+    "name": "Shadow Step",
+    "political": null,
+    "political_bonus": null,
+    "role_restriction": "void",
+    "side": "conflict",
+    "strength": null,
+    "strength_bonus": null,
+    "text": "<em>Void</em> role only.<br><b>Action:</b> Choose a non-<em>Mythic</em> character you control - remove it from the game, then put it into play. If that character does not have the <em>Shadow</em> trait, it enters play dishonored.",
+    "traits": [
+        "spell",
+        "shadow"
+    ],
+    "type": "event"
+}

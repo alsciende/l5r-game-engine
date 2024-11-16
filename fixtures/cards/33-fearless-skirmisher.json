@@ -1,0 +1,30 @@
+{
+    "allowed_clans": [
+        "lion"
+    ],
+    "clan": "lion",
+    "cost": 2,
+    "deck_limit": 3,
+    "elements": [],
+    "fate": null,
+    "glory": 1,
+    "honor": null,
+    "id": "33-fearless-skirmisher",
+    "influence_cost": null,
+    "influence_pool": null,
+    "uniqueness": false,
+    "military": "3",
+    "military_bonus": null,
+    "name": "Fearless Skirmisher",
+    "political": "1",
+    "political_bonus": null,
+    "role_restriction": "keeper",
+    "side": "dynasty",
+    "strength": null,
+    "strength_bonus": null,
+    "text": "<em>Keeper</em> role only.<br><b>Reaction:</b> After this character wins a [conflict-military] conflict, choose a dishonored status token and a character - move the status token to the chosen character.",
+    "traits": [
+        "bushi"
+    ],
+    "type": "character"
+}

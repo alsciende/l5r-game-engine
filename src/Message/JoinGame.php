@@ -9,7 +9,7 @@ use Symfony\Component\Uid\Uuid;
 readonly class JoinGame implements PlayerActionInterface
 {
     /**
-     * @param array<string, int> $cardIds
+     * @param array<string, string> $cardIds
      */
     public function __construct(
         private string $gameId,
@@ -55,7 +55,7 @@ readonly class JoinGame implements PlayerActionInterface
     }
 
     /**
-     * @return array<string, int>
+     * @return array<string, string>
      */
     public function getCardIds(): array
     {
@@ -63,9 +63,9 @@ readonly class JoinGame implements PlayerActionInterface
     }
 
     /**
-     * @param array<int> $deckContent
+     * @param array<string> $deckContent
      *
-     * @return array<string, int>
+     * @return array<string, string>
      */
     public static function generateCardsIds(array $deckContent): array
     {

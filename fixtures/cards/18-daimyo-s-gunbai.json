@@ -1,0 +1,31 @@
+{
+    "allowed_clans": [
+        "*"
+    ],
+    "clan": "neutral",
+    "cost": null,
+    "deck_limit": 3,
+    "elements": null,
+    "fate": null,
+    "glory": null,
+    "honor": null,
+    "id": "18-daimyo-s-gunbai",
+    "influence_cost": 0,
+    "influence_pool": null,
+    "is_restricted": false,
+    "military": null,
+    "military_bonus": "+2",
+    "name": "Daimyō's Gunbai",
+    "political": null,
+    "political_bonus": "+2",
+    "role_restriction": null,
+    "side": "conflict",
+    "strength": null,
+    "strength_bonus": null,
+    "text": "Restricted.<br><b>Action:</b> During a conflict, if this card is in your hand, reveal it and initiate a [conflict-military] duel against a character your opponent controls of his or her choice - resolve the duel. Put this card into play attached to the duel's winner, if able. Otherwise, discard it.",
+    "traits": [
+        "item"
+    ],
+    "type": "attachment",
+    "uniqueness": true
+}

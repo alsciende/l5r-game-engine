@@ -1,0 +1,32 @@
+{
+    "allowed_clans": [
+        "lion"
+    ],
+    "clan": "lion",
+    "cost": null,
+    "deck_limit": 1,
+    "elements": [
+        "earth"
+    ],
+    "fate": null,
+    "glory": null,
+    "honor": null,
+    "id": "30-spectral-visitation",
+    "influence_cost": null,
+    "influence_pool": null,
+    "uniqueness": false,
+    "military": null,
+    "military_bonus": null,
+    "name": "Spectral Visitation",
+    "political": null,
+    "political_bonus": null,
+    "role_restriction": null,
+    "side": "province",
+    "strength": "4",
+    "strength_bonus": null,
+    "text": "<b>Reaction:</b> After this province is revealed, discard the top 4 cards of your dynasty deck. Choose a character in your dynasty discard pile - put that character into play. If it is in play at the end of the phase, put it on the bottom of your dynasty deck.",
+    "traits": [
+        "spirit"
+    ],
+    "type": "province"
+}

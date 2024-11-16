@@ -1,0 +1,30 @@
+{
+    "allowed_clans": [
+        "*"
+    ],
+    "clan": "neutral",
+    "cost": null,
+    "deck_limit": 1,
+    "elements": [
+        "fire"
+    ],
+    "fate": null,
+    "glory": null,
+    "honor": null,
+    "id": "36-brushfires",
+    "influence_cost": null,
+    "influence_pool": null,
+    "uniqueness": false,
+    "military": null,
+    "military_bonus": null,
+    "name": "Brushfires",
+    "political": null,
+    "political_bonus": null,
+    "role_restriction": null,
+    "side": "province",
+    "strength": "4",
+    "strength_bonus": null,
+    "text": "<b>Reaction:</b> After this province is revealed, choose an attacking character - remove 2 fate from that character.",
+    "traits": [],
+    "type": "province"
+}

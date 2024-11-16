@@ -1,0 +1,29 @@
+{
+    "allowed_clans": [
+        "*"
+    ],
+    "clan": "neutral",
+    "cost": 2,
+    "deck_limit": 3,
+    "elements": null,
+    "fate": null,
+    "glory": null,
+    "honor": null,
+    "id": "16-unveiled-destiny",
+    "influence_cost": 0,
+    "influence_pool": null,
+    "is_restricted": false,
+    "military": null,
+    "military_bonus": "+1",
+    "name": "Unveiled Destiny",
+    "political": null,
+    "political_bonus": "+1",
+    "role_restriction": "seeker",
+    "side": "conflict",
+    "strength": null,
+    "strength_bonus": null,
+    "text": "<em>Seeker</em> role only.<br>While attached character is attacking, the contested ring gains the element of your role. <i>(If attached character wins the conflict as an attacker, you may choose which of its ring effects to resolve.)</i>",
+    "traits": [],
+    "type": "attachment",
+    "uniqueness": false
+}

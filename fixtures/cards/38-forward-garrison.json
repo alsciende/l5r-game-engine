@@ -1,0 +1,30 @@
+{
+    "allowed_clans": [
+        "lion"
+    ],
+    "clan": "lion",
+    "cost": null,
+    "deck_limit": 3,
+    "elements": [],
+    "fate": null,
+    "glory": null,
+    "honor": null,
+    "id": "38-forward-garrison",
+    "influence_cost": null,
+    "influence_pool": null,
+    "uniqueness": false,
+    "military": null,
+    "military_bonus": null,
+    "name": "Forward Garrison",
+    "political": null,
+    "political_bonus": null,
+    "role_restriction": null,
+    "side": "dynasty",
+    "strength": null,
+    "strength_bonus": "+1",
+    "text": "While there is a <em>Battlefield</em> in play, fate cannot be removed from characters you control by opponents' card or ring effects.",
+    "traits": [
+        "castle"
+    ],
+    "type": "holding"
+}

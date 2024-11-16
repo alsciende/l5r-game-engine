@@ -1,0 +1,29 @@
+{
+    "allowed_clans": [
+        "*"
+    ],
+    "clan": "phoenix",
+    "cost": 1,
+    "deck_limit": 3,
+    "elements": null,
+    "fate": null,
+    "glory": null,
+    "honor": null,
+    "id": "03-harmonize",
+    "influence_cost": 1,
+    "influence_pool": null,
+    "is_restricted": false,
+    "military": null,
+    "military_bonus": null,
+    "name": "Harmonize",
+    "political": null,
+    "political_bonus": null,
+    "role_restriction": "keeper",
+    "side": "conflict",
+    "strength": null,
+    "strength_bonus": null,
+    "text": "<em>Keeper</em> role only.<br><b>Action:</b> During a conflict in which you are the defending player, choose a defending character and an attacking character with equal or lower printed cost – move each chosen character home.",
+    "traits": [],
+    "type": "event",
+    "uniqueness": false
+}

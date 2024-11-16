@@ -1,0 +1,30 @@
+{
+    "allowed_clans": [
+        "*"
+    ],
+    "clan": "dragon",
+    "cost": 0,
+    "deck_limit": 3,
+    "elements": [],
+    "fate": null,
+    "glory": null,
+    "honor": null,
+    "id": "37-shoshi-ni-kie",
+    "influence_cost": 2,
+    "influence_pool": null,
+    "uniqueness": false,
+    "military": null,
+    "military_bonus": null,
+    "name": "Shoshi ni Kie",
+    "political": null,
+    "political_bonus": null,
+    "role_restriction": "water",
+    "side": "conflict",
+    "strength": null,
+    "strength_bonus": null,
+    "text": "<em>Water</em> role only.<br><b>Action:</b> Reveal a <i>(friendly)</i> facedown province. Choose an ordinary character - ready that character.",
+    "traits": [
+        "heresy"
+    ],
+    "type": "event"
+}

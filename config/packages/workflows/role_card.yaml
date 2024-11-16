@@ -1,0 +1,19 @@
+framework:
+    workflows:
+        role_card:
+            type: 'state_machine'
+            audit_trail:
+                enabled: true
+            marking_store:
+                type: 'method'
+                property: 'currentPlace'
+            supports:
+                - App\Entity\CardTypes\RoleCard
+            initial_marking: in_play
+            places:
+                - in_play
+            transitions:
+                noop:
+                    from: in_play
+                    to: in_play
+

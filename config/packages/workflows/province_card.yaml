@@ -1,0 +1,30 @@
+framework:
+    workflows:
+        province_card:
+            type: 'state_machine'
+            audit_trail:
+                enabled: true
+            marking_store:
+                type: 'method'
+                property: 'currentPlace'
+            supports:
+                - App\Entity\CardTypes\ProvinceCard
+            initial_marking: facedown
+            places:
+                - facedown
+                - unbroken
+                - broken
+            transitions:
+                reveal:
+                    from: facedown
+                    to: unbroken
+                unreveal:
+                    from: unbroken
+                    to: facedown
+                break:
+                    from: unbroken
+                    to: broken
+                restore:
+                    from: broken
+                    to: unbroken
+

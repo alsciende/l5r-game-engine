@@ -1,3 +1,4 @@
+name: l5r-engine
 services:
 ###> doctrine/doctrine-bundle ###
   database:

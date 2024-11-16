@@ -1,0 +1,29 @@
+{
+    "allowed_clans": [
+        "*"
+    ],
+    "clan": "lion",
+    "cost": 1,
+    "deck_limit": 3,
+    "elements": null,
+    "fate": null,
+    "glory": null,
+    "honor": null,
+    "id": "05-guard-duty",
+    "influence_cost": 1,
+    "influence_pool": null,
+    "is_restricted": false,
+    "military": null,
+    "military_bonus": "+0",
+    "name": "Guard Duty",
+    "political": null,
+    "political_bonus": "+0",
+    "role_restriction": "keeper",
+    "side": "conflict",
+    "strength": null,
+    "strength_bonus": null,
+    "text": "<em>Keeper</em> role only.<br><b>Action:</b> If attached character is defending – honor it.",
+    "traits": [],
+    "type": "attachment",
+    "uniqueness": false
+}

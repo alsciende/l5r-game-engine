@@ -1,0 +1,30 @@
+{
+    "allowed_clans": [
+        "*"
+    ],
+    "clan": "lion",
+    "cost": 0,
+    "deck_limit": 3,
+    "elements": [],
+    "fate": null,
+    "glory": null,
+    "honor": null,
+    "id": "30-logistics",
+    "influence_cost": 1,
+    "influence_pool": null,
+    "uniqueness": false,
+    "military": null,
+    "military_bonus": null,
+    "name": "Logistics",
+    "political": null,
+    "political_bonus": null,
+    "role_restriction": null,
+    "side": "conflict",
+    "strength": null,
+    "strength_bonus": null,
+    "text": "<b>Action:</b> Choose a card in or attached to a province - move that card to another unbroken non-stronghold province controlled by the same player. If there is a <em>Battlefield</em> in play, draw 1 card.",
+    "traits": [
+        "tactic"
+    ],
+    "type": "event"
+}

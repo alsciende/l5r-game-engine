@@ -1,0 +1,32 @@
+{
+    "allowed_clans": [
+        "*"
+    ],
+    "clan": "scorpion",
+    "cost": 0,
+    "deck_limit": 3,
+    "elements": null,
+    "fate": null,
+    "glory": null,
+    "honor": null,
+    "id": "07-oni-mask",
+    "influence_cost": 1,
+    "influence_pool": null,
+    "is_restricted": false,
+    "military": null,
+    "military_bonus": "+1",
+    "name": "Oni Mask",
+    "political": null,
+    "political_bonus": "+0",
+    "role_restriction": "seeker",
+    "side": "conflict",
+    "strength": null,
+    "strength_bonus": null,
+    "text": "<em>Seeker</em> role only.<br>Attach to a character you control.<br><b>Action:</b> During a conflict, remove 1 fate from attached character. Choose a participating character – treat that character as if its printed text box were blank (except for <em>Traits</em>) until the end of the conflict.",
+    "traits": [
+        "item",
+        "mask"
+    ],
+    "type": "attachment",
+    "uniqueness": false
+}

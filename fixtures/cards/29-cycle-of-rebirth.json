@@ -1,0 +1,28 @@
+{
+    "allowed_clans": [
+        "dragon"
+    ],
+    "clan": "dragon",
+    "cost": 0,
+    "deck_limit": 3,
+    "elements": [],
+    "fate": null,
+    "glory": null,
+    "honor": null,
+    "id": "29-cycle-of-rebirth",
+    "influence_cost": null,
+    "influence_pool": null,
+    "uniqueness": false,
+    "military": null,
+    "military_bonus": null,
+    "name": "Cycle of Rebirth",
+    "political": null,
+    "political_bonus": null,
+    "role_restriction": null,
+    "side": "dynasty",
+    "strength": null,
+    "strength_bonus": null,
+    "text": "<b>Action:</b> Choose a card in a province - shuffle this card and that card into their owner's decks. Refill each province emptied by this effect faceup. (Max 1 per round.)",
+    "traits": [],
+    "type": "event"
+}

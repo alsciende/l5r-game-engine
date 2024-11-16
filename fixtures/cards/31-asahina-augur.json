@@ -1,0 +1,31 @@
+{
+    "allowed_clans": [
+        "crane"
+    ],
+    "clan": "crane",
+    "cost": 2,
+    "deck_limit": 3,
+    "elements": [],
+    "fate": null,
+    "glory": 3,
+    "honor": null,
+    "id": "31-asahina-augur",
+    "influence_cost": null,
+    "influence_pool": null,
+    "uniqueness": false,
+    "military": "0",
+    "military_bonus": null,
+    "name": "Asahina Augur",
+    "political": "0",
+    "political_bonus": null,
+    "role_restriction": null,
+    "side": "dynasty",
+    "strength": null,
+    "strength_bonus": null,
+    "text": "You may look at facedown cards in your provinces.<br><b>Action:</b> Choose a card in your provinces - discard that card. (Limit 3 times per round.)",
+    "traits": [
+        "shugenja",
+        "air"
+    ],
+    "type": "character"
+}

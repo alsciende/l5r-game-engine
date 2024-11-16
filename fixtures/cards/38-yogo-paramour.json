@@ -1,0 +1,31 @@
+{
+    "allowed_clans": [
+        "scorpion"
+    ],
+    "clan": "scorpion",
+    "cost": 2,
+    "deck_limit": 3,
+    "elements": [],
+    "fate": null,
+    "glory": 0,
+    "honor": null,
+    "id": "38-yogo-paramour",
+    "influence_cost": null,
+    "influence_pool": null,
+    "uniqueness": false,
+    "military": "1",
+    "military_bonus": null,
+    "name": "Yogo Paramour",
+    "political": "3",
+    "political_bonus": null,
+    "role_restriction": null,
+    "side": "dynasty",
+    "strength": null,
+    "strength_bonus": null,
+    "text": "Dire - This character gains: \"<b>Action:</b> Bow this character. Choose another character - dishonor that character.\" <i>(This character is dire when it has no fate on it.)</i>",
+    "traits": [
+        "shugenja",
+        "air"
+    ],
+    "type": "character"
+}

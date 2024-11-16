@@ -1,0 +1,31 @@
+{
+    "allowed_clans": [
+        "crane"
+    ],
+    "clan": "crane",
+    "cost": 4,
+    "deck_limit": 3,
+    "elements": [],
+    "fate": null,
+    "glory": 3,
+    "honor": null,
+    "id": "40-asahina-peacekeeper",
+    "influence_cost": null,
+    "influence_pool": null,
+    "uniqueness": false,
+    "military": null,
+    "military_bonus": null,
+    "name": "Asahina Peacekeeper",
+    "political": "5",
+    "political_bonus": null,
+    "role_restriction": "seeker",
+    "side": "dynasty",
+    "strength": null,
+    "strength_bonus": null,
+    "text": "<em>Seeker</em> role only.<br>Limited.<br>As an additional cost for a player to declare a character as an attacker during a [conflict-military] conflict, that player must discard 1 card from their hand.",
+    "traits": [
+        "shugenja",
+        "air"
+    ],
+    "type": "character"
+}

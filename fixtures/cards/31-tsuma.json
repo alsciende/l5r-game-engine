@@ -1,0 +1,33 @@
+{
+    "allowed_clans": [
+        "crane"
+    ],
+    "clan": "crane",
+    "cost": null,
+    "deck_limit": 1,
+    "elements": [
+        "air",
+        "fire"
+    ],
+    "fate": null,
+    "glory": null,
+    "honor": null,
+    "id": "31-tsuma",
+    "influence_cost": null,
+    "influence_pool": null,
+    "uniqueness": true,
+    "military": null,
+    "military_bonus": null,
+    "name": "Tsuma",
+    "political": null,
+    "political_bonus": null,
+    "role_restriction": null,
+    "side": "province",
+    "strength": "3",
+    "strength_bonus": null,
+    "text": "Eminent. <i>(This province starts the game faceup and cannot be turned facedown. It cannot be a stronghold province.)</i><br>Each character played from this province enters play honored.",
+    "traits": [
+        "city"
+    ],
+    "type": "province"
+}

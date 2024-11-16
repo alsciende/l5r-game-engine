@@ -1,28 +1,27 @@
 install:
 	composer install
 
-lint:
-	bin/console lint:container
-	bin/console doctrine:schema:validate --skip-sync
-	vendor/bin/ecs --fix
-	vendor/bin/rector
-	vendor/bin/phpstan
-
-test:
-	APP_ENV=test bin/console doctrine:database:drop -f
-	APP_ENV=test bin/console doctrine:database:create
-	APP_ENV=test bin/console doctrine:schema:create
-	APP_ENV=test bin/console doctrine:fixtures:load -n
-	bin/phpunit
-
-sql:
-	bin/console d:s:u --dump-sql --complete
-
 up:
 	docker compose up -d
 
-reset:
-	bin/console d:s:d -f
-	bin/console d:s:c
-	bin/console d:f:l -n
+down:
+	docker compose down
 
+clean:
+	rm -rf docker/dev/postgres/data
+	rm -rf docker/dev/nginx/log
+	rm -rf vendor
+
+lint:
+	php bin/console lint:container
+	php vendor/bin/ecs --fix
+#	php vendor/bin/rector
+	php vendor/bin/phpstan -v --memory-limit=1G
+
+test:
+	php vendor/bin/phpunit
+
+db:
+	php bin/console doctrine:schema:drop -f
+	php bin/console doctrine:schema:create
+	php bin/console doctrine:fixtures:load -n

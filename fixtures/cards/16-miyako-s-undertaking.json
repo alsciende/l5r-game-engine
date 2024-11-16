@@ -1,0 +1,29 @@
+{
+    "allowed_clans": [
+        "*"
+    ],
+    "clan": "scorpion",
+    "cost": 2,
+    "deck_limit": 3,
+    "elements": null,
+    "fate": null,
+    "glory": null,
+    "honor": null,
+    "id": "16-miyako-s-undertaking",
+    "influence_cost": 1,
+    "influence_pool": null,
+    "is_restricted": false,
+    "military": null,
+    "military_bonus": null,
+    "name": "Miyako's Undertaking",
+    "political": null,
+    "political_bonus": null,
+    "role_restriction": null,
+    "side": "conflict",
+    "strength": null,
+    "strength_bonus": null,
+    "text": "Play only if you have 6 or fewer honor.<br><b>Action: </b>During a conflict, choose a non-unique character in your opponent's dynasty discard pile and a participating character you control - until the end of the conflict, your character becomes a copy of the character in your opponent's discard pile.",
+    "traits": [],
+    "type": "event",
+    "uniqueness": false
+}

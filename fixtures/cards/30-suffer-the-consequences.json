@@ -1,0 +1,28 @@
+{
+    "allowed_clans": [
+        "*"
+    ],
+    "clan": "scorpion",
+    "cost": 2,
+    "deck_limit": 3,
+    "elements": [],
+    "fate": null,
+    "glory": null,
+    "honor": null,
+    "id": "30-suffer-the-consequences",
+    "influence_cost": 2,
+    "influence_pool": null,
+    "uniqueness": false,
+    "military": null,
+    "military_bonus": null,
+    "name": "Suffer the Consequences",
+    "political": null,
+    "political_bonus": null,
+    "role_restriction": "earth",
+    "side": "conflict",
+    "strength": null,
+    "strength_bonus": null,
+    "text": "<em>Earth</em> role only.<br><b>Action:</b> During the conflict phase, sacrifice a bowed <i>(friendly)</i> <em>Bushi</em>, <em>Courtier</em>, or <em>Shugenja</em> character - you may declare an additional [conflict-political] conflict this phase. (Max 1 per phase.)",
+    "traits": [],
+    "type": "event"
+}

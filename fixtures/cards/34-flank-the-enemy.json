@@ -1,0 +1,30 @@
+{
+    "allowed_clans": [
+        "*"
+    ],
+    "clan": "unicorn",
+    "cost": 1,
+    "deck_limit": 3,
+    "elements": [],
+    "fate": null,
+    "glory": null,
+    "honor": null,
+    "id": "34-flank-the-enemy",
+    "influence_cost": 3,
+    "influence_pool": null,
+    "uniqueness": false,
+    "military": null,
+    "military_bonus": null,
+    "name": "Flank the Enemy",
+    "political": null,
+    "political_bonus": null,
+    "role_restriction": null,
+    "side": "conflict",
+    "strength": null,
+    "strength_bonus": null,
+    "text": "<b>Action:</b> During a conflict in which you control more participating characters than your opponent, your opponent chooses a participating character they control - bow that character.",
+    "traits": [
+        "tactic"
+    ],
+    "type": "event"
+}

@@ -1,0 +1,31 @@
+{
+    "allowed_clans": [
+        "*"
+    ],
+    "clan": "dragon",
+    "cost": 2,
+    "deck_limit": 3,
+    "elements": [],
+    "fate": null,
+    "glory": 1,
+    "honor": null,
+    "id": "39-promising-youth",
+    "influence_cost": 1,
+    "influence_pool": null,
+    "uniqueness": false,
+    "military": "2",
+    "military_bonus": null,
+    "name": "Promising Youth",
+    "political": "2",
+    "political_bonus": null,
+    "role_restriction": null,
+    "side": "conflict",
+    "strength": null,
+    "strength_bonus": null,
+    "text": "You may play this character as an attachment with the text: \"Attached character gets +2[conflict-military] and +2[conflict-political]. <b>Interrupt:</b> When attached character leaves play - detach this attachment and turn it into a character.\"",
+    "traits": [
+        "monk",
+        "tattooed"
+    ],
+    "type": "character"
+}

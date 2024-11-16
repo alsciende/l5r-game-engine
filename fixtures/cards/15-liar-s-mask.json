@@ -1,0 +1,32 @@
+{
+    "allowed_clans": [
+        "*"
+    ],
+    "clan": "scorpion",
+    "cost": 1,
+    "deck_limit": 3,
+    "elements": null,
+    "fate": null,
+    "glory": null,
+    "honor": null,
+    "id": "15-liar-s-mask",
+    "influence_cost": 1,
+    "influence_pool": null,
+    "is_restricted": false,
+    "military": null,
+    "military_bonus": "+1",
+    "name": "Liar's Mask",
+    "political": null,
+    "political_bonus": "+1",
+    "role_restriction": null,
+    "side": "conflict",
+    "strength": null,
+    "strength_bonus": null,
+    "text": "Play only if your have 6 or fewer honor.<br><b>Action:</b> Discard a status token from attached character.",
+    "traits": [
+        "item",
+        "mask"
+    ],
+    "type": "attachment",
+    "uniqueness": false
+}

@@ -1,0 +1,32 @@
+{
+    "allowed_clans": [
+        "unicorn"
+    ],
+    "clan": "unicorn",
+    "cost": 3,
+    "deck_limit": 3,
+    "elements": [],
+    "fate": null,
+    "glory": 1,
+    "honor": null,
+    "id": "37-nimble-noyan",
+    "influence_cost": null,
+    "influence_pool": null,
+    "uniqueness": false,
+    "military": "4",
+    "military_bonus": null,
+    "name": "Nimble Noyan",
+    "political": "1",
+    "political_bonus": null,
+    "role_restriction": "keeper",
+    "side": "dynasty",
+    "strength": null,
+    "strength_bonus": null,
+    "text": "<em>Keeper</em> role only.<br>Dire - While this character is participating in a conflict, bowed participating characters contribute their skill toward the resolution of the conflict. (This character is dire when it has no fate on it.)",
+    "traits": [
+        "bushi",
+        "cavalry",
+        "commander"
+    ],
+    "type": "character"
+}

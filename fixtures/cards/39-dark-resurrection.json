@@ -1,0 +1,32 @@
+{
+    "allowed_clans": [
+        "*"
+    ],
+    "clan": "unicorn",
+    "cost": 3,
+    "deck_limit": 3,
+    "elements": [],
+    "fate": null,
+    "glory": null,
+    "honor": null,
+    "id": "39-dark-resurrection",
+    "influence_cost": 1,
+    "influence_pool": null,
+    "uniqueness": false,
+    "military": null,
+    "military_bonus": null,
+    "name": "Dark Resurrection",
+    "political": null,
+    "political_bonus": null,
+    "role_restriction": "earth",
+    "side": "conflict",
+    "strength": null,
+    "strength_bonus": null,
+    "text": "<em>Earth</em> role only.<br>This card's fate cost can only be paid for with fate on characters you control.<br><b>Action:</b> During a [conflict-military] conflict, choose up to 3 characters, each with printed cost 3 or lower in your dynasty discard pile - put those characters into play in the conflict dishonored.",
+    "traits": [
+        "maho",
+        "spell",
+        "earth"
+    ],
+    "type": "event"
+}

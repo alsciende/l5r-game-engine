@@ -1,0 +1,30 @@
+{
+    "allowed_clans": [
+        "scorpion"
+    ],
+    "clan": "scorpion",
+    "cost": 1,
+    "deck_limit": 3,
+    "elements": [],
+    "fate": null,
+    "glory": 1,
+    "honor": null,
+    "id": "33-beautiful-entertainer",
+    "influence_cost": null,
+    "influence_pool": null,
+    "uniqueness": false,
+    "military": "0",
+    "military_bonus": null,
+    "name": "Beautiful Entertainer",
+    "political": "1",
+    "political_bonus": null,
+    "role_restriction": null,
+    "side": "dynasty",
+    "strength": null,
+    "strength_bonus": null,
+    "text": "Rally. <i>(After this card is revealed in a province, add the top card of your dynasty deck to the province, faceup.)</i><br><b>Interrupt:</b> When this character leaves play, if you are less honorable than an opponent - gain 2 honor.",
+    "traits": [
+        "geisha"
+    ],
+    "type": "character"
+}

@@ -1,0 +1,31 @@
+{
+    "allowed_clans": [
+        "*"
+    ],
+    "clan": "unicorn",
+    "cost": 2,
+    "deck_limit": 3,
+    "elements": [],
+    "fate": null,
+    "glory": 1,
+    "honor": null,
+    "id": "29-countryside-trader",
+    "influence_cost": 2,
+    "influence_pool": null,
+    "uniqueness": false,
+    "military": "1",
+    "military_bonus": null,
+    "name": "Countryside Trader",
+    "political": "2",
+    "political_bonus": null,
+    "role_restriction": null,
+    "side": "conflict",
+    "strength": null,
+    "strength_bonus": null,
+    "text": "<b>Action:</b> During a conflict in which this character is attacking, spend 1 fate and choose a triggered ability printed on the attacked province - resolve that ability as if you controlled the province, ignoring all triggering conditions.",
+    "traits": [
+        "courtier",
+        "merchant"
+    ],
+    "type": "character"
+}

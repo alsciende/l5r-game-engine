@@ -1,0 +1,31 @@
+{
+    "allowed_clans": [
+        "*"
+    ],
+    "clan": "dragon",
+    "cost": 2,
+    "deck_limit": 3,
+    "elements": null,
+    "fate": null,
+    "glory": null,
+    "honor": null,
+    "id": "16-mirumoto-daisho",
+    "influence_cost": 2,
+    "influence_pool": null,
+    "is_restricted": false,
+    "military": null,
+    "military_bonus": "+2",
+    "name": "Mirumoto Daishō",
+    "political": null,
+    "political_bonus": "+2",
+    "role_restriction": null,
+    "side": "conflict",
+    "strength": null,
+    "strength_bonus": null,
+    "text": "Restricted.  Attached character may not have other restricted attachments.<br>While attached character is dueling, your opponent cannot bid 1 or 5.",
+    "traits": [
+        "weapon"
+    ],
+    "type": "attachment",
+    "uniqueness": false
+}

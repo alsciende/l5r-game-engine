@@ -1,0 +1,31 @@
+{
+    "allowed_clans": [
+        "crane"
+    ],
+    "clan": "crane",
+    "cost": 4,
+    "deck_limit": 3,
+    "elements": [],
+    "fate": null,
+    "glory": 2,
+    "honor": null,
+    "id": "30-cunning-negotiator",
+    "influence_cost": null,
+    "influence_pool": null,
+    "uniqueness": false,
+    "military": "1",
+    "military_bonus": null,
+    "name": "Cunning Negotiator",
+    "political": "5",
+    "political_bonus": null,
+    "role_restriction": null,
+    "side": "dynasty",
+    "strength": null,
+    "strength_bonus": null,
+    "text": "Rally.<br><b>Action:</b> During a conflict, initiate a [conflict-political] duel against a character your opponent controls of their choice - resolve the duel. The controller of the duel's winner may trigger the attacked province's action ability as if they controlled the province, even if it has already been triggered this round (or specified period).",
+    "traits": [
+        "courtier",
+        "duelist"
+    ],
+    "type": "character"
+}

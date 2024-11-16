@@ -1,0 +1,30 @@
+{
+    "allowed_clans": [
+        "*"
+    ],
+    "clan": "crane",
+    "cost": 1,
+    "deck_limit": 3,
+    "elements": [],
+    "fate": null,
+    "glory": null,
+    "honor": null,
+    "id": "41-setting-the-standard",
+    "influence_cost": 2,
+    "influence_pool": null,
+    "uniqueness": false,
+    "military": null,
+    "military_bonus": "+0",
+    "name": "Setting the Standard",
+    "political": null,
+    "political_bonus": "+2",
+    "role_restriction": "air",
+    "side": "conflict",
+    "strength": null,
+    "strength_bonus": null,
+    "text": "<em>Air</em> role only.<br>Restricted.<br>Attached character gains: \"<b>Reaction:</b> After this character wins a conflict — draw 2 cards, then discard 1 card from your hand.\"",
+    "traits": [
+        "technique"
+    ],
+    "type": "attachment"
+}

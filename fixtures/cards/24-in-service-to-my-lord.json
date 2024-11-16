@@ -1,0 +1,31 @@
+{
+    "allowed_clans": [
+        "*"
+    ],
+    "clan": "lion",
+    "cost": 0,
+    "deck_limit": 3,
+    "elements": null,
+    "fate": null,
+    "glory": null,
+    "honor": null,
+    "id": "24-in-service-to-my-lord",
+    "influence_cost": 2,
+    "influence_pool": null,
+    "is_restricted": false,
+    "military": null,
+    "military_bonus": null,
+    "name": "In Service to My Lord",
+    "political": null,
+    "political_bonus": null,
+    "role_restriction": null,
+    "side": "conflict",
+    "strength": null,
+    "strength_bonus": null,
+    "text": "This card can be played from your discard pile.<br><b>Action:</b> Bow a <i>(friendly)</i> non-unique character and choose a unique character - ready the chosen character. Put this card on the bottom of its owner's conflict deck.",
+    "traits": [
+        "tactic"
+    ],
+    "type": "event",
+    "uniqueness": false
+}

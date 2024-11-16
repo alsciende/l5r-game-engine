@@ -1,0 +1,30 @@
+{
+    "allowed_clans": [
+        "unicorn"
+    ],
+    "clan": "unicorn",
+    "cost": 1,
+    "deck_limit": 3,
+    "elements": [],
+    "fate": null,
+    "glory": 1,
+    "honor": null,
+    "id": "40-open-field-skirmisher",
+    "influence_cost": null,
+    "influence_pool": null,
+    "uniqueness": false,
+    "military": "2",
+    "military_bonus": null,
+    "name": "Open Field Skirmisher",
+    "political": "0",
+    "political_bonus": null,
+    "role_restriction": null,
+    "side": "dynasty",
+    "strength": null,
+    "strength_bonus": null,
+    "text": "<b>Action:</b> During a conflict in which this character is attacking, remove 1 fate from this character - the attacked province gets -3 strength until the end of the conflict.",
+    "traits": [
+        "bushi"
+    ],
+    "type": "character"
+}

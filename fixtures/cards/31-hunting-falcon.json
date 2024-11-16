@@ -1,0 +1,30 @@
+{
+    "allowed_clans": [
+        "*"
+    ],
+    "clan": "unicorn",
+    "cost": 0,
+    "deck_limit": 3,
+    "elements": [],
+    "fate": null,
+    "glory": null,
+    "honor": null,
+    "id": "31-hunting-falcon",
+    "influence_cost": 1,
+    "influence_pool": null,
+    "uniqueness": false,
+    "military": null,
+    "military_bonus": "+1",
+    "name": "Hunting Falcon",
+    "political": null,
+    "political_bonus": "+0",
+    "role_restriction": null,
+    "side": "conflict",
+    "strength": null,
+    "strength_bonus": null,
+    "text": "<b>Reaction:</b> After this attachment enters play, choose a facedown province - look at that province.",
+    "traits": [
+        "creature"
+    ],
+    "type": "attachment"
+}

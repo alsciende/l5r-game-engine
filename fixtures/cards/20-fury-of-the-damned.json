@@ -1,0 +1,29 @@
+{
+    "allowed_clans": [
+        "*"
+    ],
+    "clan": "crab",
+    "cost": 2,
+    "deck_limit": 3,
+    "elements": null,
+    "fate": null,
+    "glory": null,
+    "honor": null,
+    "id": "20-fury-of-the-damned",
+    "influence_cost": 1,
+    "influence_pool": null,
+    "is_restricted": false,
+    "military": null,
+    "military_bonus": null,
+    "name": "Fury of the Damned",
+    "political": null,
+    "political_bonus": null,
+    "role_restriction": "fire",
+    "side": "conflict",
+    "strength": null,
+    "strength_bonus": null,
+    "text": "<em>Fire</em> role only.<br><b>Action:</b> During a conflict, choose any number of participating <em>Bushi</em> characters you control - double the base [conflict-military] skill of each of those characters until the end of the conflict. At the end of the conflict, sacrifice each of those characters.",
+    "traits": [],
+    "type": "event",
+    "uniqueness": false
+}

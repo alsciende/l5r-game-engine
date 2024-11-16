@@ -1,0 +1,28 @@
+{
+    "allowed_clans": [
+        "dragon"
+    ],
+    "clan": "dragon",
+    "cost": null,
+    "deck_limit": 3,
+    "elements": [],
+    "fate": null,
+    "glory": null,
+    "honor": null,
+    "id": "32-hidden-mountain-pass",
+    "influence_cost": null,
+    "influence_pool": null,
+    "uniqueness": false,
+    "military": null,
+    "military_bonus": null,
+    "name": "Hidden Mountain Pass",
+    "political": null,
+    "political_bonus": null,
+    "role_restriction": null,
+    "side": "dynasty",
+    "strength": null,
+    "strength_bonus": "+1",
+    "text": "Rally. <i>(After this card is revealed in a province, add the top card of your dynasty deck to the province, faceup.)</i><br><b>Interrupt:</b> When the conflict phase ends, if this holding's province is unbroken - turn that province facedown.",
+    "traits": [],
+    "type": "holding"
+}

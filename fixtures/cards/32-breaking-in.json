@@ -1,0 +1,30 @@
+{
+    "allowed_clans": [
+        "unicorn"
+    ],
+    "clan": "unicorn",
+    "cost": null,
+    "deck_limit": 1,
+    "elements": [
+        "void"
+    ],
+    "fate": null,
+    "glory": null,
+    "honor": null,
+    "id": "32-breaking-in",
+    "influence_cost": null,
+    "influence_pool": null,
+    "uniqueness": false,
+    "military": null,
+    "military_bonus": null,
+    "name": "Breaking In",
+    "political": null,
+    "political_bonus": null,
+    "role_restriction": null,
+    "side": "province",
+    "strength": "5",
+    "strength_bonus": null,
+    "text": "<b>Reaction:</b> After this province is revealed - search the top 8 cards of your dynasty deck for a character and put it into this province faceup, if that character has the <em>Cavalry</em> trait, you may put it faceup into any province you control instead. Shuffle.",
+    "traits": [],
+    "type": "province"
+}

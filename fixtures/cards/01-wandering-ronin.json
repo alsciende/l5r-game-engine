@@ -1,0 +1,32 @@
+{
+    "allowed_clans": [
+        "*"
+    ],
+    "clan": "neutral",
+    "cost": 3,
+    "deck_limit": 3,
+    "elements": null,
+    "fate": null,
+    "glory": 0,
+    "honor": null,
+    "id": "01-wandering-ronin",
+    "influence_cost": null,
+    "influence_pool": null,
+    "is_restricted": false,
+    "military": "2",
+    "military_bonus": null,
+    "name": "Wandering Ronin",
+    "political": "2",
+    "political_bonus": null,
+    "role_restriction": null,
+    "side": "dynasty",
+    "strength": null,
+    "strength_bonus": null,
+    "text": "<b>Action:</b> During a conflict, remove 1 fate from this character – it gets +2[conflict-military] and +2[conflict-political] until the end of the conflict. (Limit twice per conflict.)",
+    "traits": [
+        "bushi",
+        "ronin"
+    ],
+    "type": "character",
+    "uniqueness": false
+}

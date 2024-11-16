@@ -1,0 +1,33 @@
+{
+    "allowed_clans": [
+        "phoenix"
+    ],
+    "clan": "phoenix",
+    "cost": null,
+    "deck_limit": 1,
+    "elements": [
+        "air",
+        "void"
+    ],
+    "fate": null,
+    "glory": null,
+    "honor": null,
+    "id": "29-kakudaira",
+    "influence_cost": null,
+    "influence_pool": null,
+    "military": null,
+    "military_bonus": null,
+    "name": "Kakudaira",
+    "political": null,
+    "political_bonus": null,
+    "role_restriction": null,
+    "side": "province",
+    "strength": "5",
+    "strength_bonus": null,
+    "text": "Eminent. <i>(This province starts the game faceup and cannot be turned facedown. It cannot be a stronghold province.)</i><br>After each phase begins, reveal each facedown card in this province.",
+    "traits": [
+        "city"
+    ],
+    "type": "province",
+    "uniqueness": true
+}

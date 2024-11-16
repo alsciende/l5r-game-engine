@@ -1,0 +1,28 @@
+{
+    "allowed_clans": [
+        "*"
+    ],
+    "clan": "dragon",
+    "cost": 1,
+    "deck_limit": 3,
+    "elements": [],
+    "fate": null,
+    "glory": null,
+    "honor": null,
+    "id": "30-mountaintop-vigil",
+    "influence_cost": 1,
+    "influence_pool": null,
+    "uniqueness": false,
+    "military": null,
+    "military_bonus": null,
+    "name": "Mountaintop Vigil",
+    "political": null,
+    "political_bonus": null,
+    "role_restriction": "void",
+    "side": "conflict",
+    "strength": null,
+    "strength_bonus": null,
+    "text": "<em>Void</em> role only.<br><<b>Action:</b> During a conflict - cancel all ring effects until the end of the conflict.",
+    "traits": [],
+    "type": "event"
+}

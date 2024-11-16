@@ -1,0 +1,32 @@
+{
+    "allowed_clans": [
+        "*"
+    ],
+    "clan": "neutral",
+    "cost": 4,
+    "deck_limit": 3,
+    "elements": [],
+    "fate": null,
+    "glory": 0,
+    "honor": null,
+    "id": "32-mercenary-company",
+    "influence_cost": null,
+    "influence_pool": null,
+    "uniqueness": false,
+    "military": "7",
+    "military_bonus": null,
+    "name": "Mercenary Company",
+    "political": null,
+    "political_bonus": null,
+    "role_restriction": null,
+    "side": "dynasty",
+    "strength": null,
+    "strength_bonus": null,
+    "text": "No attachments except <em>Weapon</em>. Rally.<br><b>Forced Reaction:</b> After this character loses a conflict - your opponent may move 1 fate from their fate pool to this character. If they do, they gain control of it. (Unlimited.)",
+    "traits": [
+        "bushi",
+        "ronin",
+        "army"
+    ],
+    "type": "character"
+}

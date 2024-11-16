@@ -1,0 +1,33 @@
+{
+    "allowed_clans": [
+        "*"
+    ],
+    "clan": "unicorn",
+    "cost": 0,
+    "deck_limit": 3,
+    "elements": null,
+    "fate": null,
+    "glory": null,
+    "honor": null,
+    "id": "14-unleash-the-djinn",
+    "influence_cost": 3,
+    "influence_pool": null,
+    "is_restricted": false,
+    "military": null,
+    "military_bonus": null,
+    "name": "Unleash the Djinn",
+    "political": null,
+    "political_bonus": null,
+    "role_restriction": "fire",
+    "side": "conflict",
+    "strength": null,
+    "strength_bonus": null,
+    "text": "<em>Fire</em> role only.<br><b>Action:</b> During a conflict, lose 3 honor – set the [conflict-military] and [conflict-political] skill of each participating character to 3 until the end of the conflict.",
+    "traits": [
+        "spell",
+        "fire",
+        "meishodo"
+    ],
+    "type": "event",
+    "uniqueness": false
+}

@@ -1,0 +1,31 @@
+{
+    "allowed_clans": [
+        "*"
+    ],
+    "clan": "neutral",
+    "cost": 0,
+    "deck_limit": 3,
+    "elements": null,
+    "fate": null,
+    "glory": null,
+    "honor": null,
+    "id": "04-censure",
+    "influence_cost": 0,
+    "influence_pool": null,
+    "is_restricted": false,
+    "military": null,
+    "military_bonus": null,
+    "name": "Censure",
+    "political": null,
+    "political_bonus": null,
+    "role_restriction": null,
+    "side": "conflict",
+    "strength": null,
+    "strength_bonus": null,
+    "text": "Play only if you have the Imperial Favor.<br><b>Interrupt:</b> When the effects of an event would initiate – cancel those effects.",
+    "traits": [
+        "imperial"
+    ],
+    "type": "event",
+    "uniqueness": false
+}

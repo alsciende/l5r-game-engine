@@ -4,9 +4,9 @@ declare(strict_types=1);
 
 namespace App\MessageHandler;
 
-use App\Entity\Card;
 use App\Entity\Deck;
 use App\Entity\Game;
+use App\Entity\PhysicalCard;
 use App\Entity\Player;
 use App\Factory\CardFactory;
 use App\Message\JoinGame;
@@ -44,9 +44,9 @@ readonly class JoinGameHandler
         return $player;
     }
 
-    private function addCard(Game $game, Player $player, string $cardId, int $id): Card
+    private function addCard(Game $game, Player $player, string $physicalCardId, string $logicalCardId): PhysicalCard
     {
-        $card = $this->factory->createCard($cardId, $id);
+        $card = $this->factory->createCard($physicalCardId, $logicalCardId);
 
         $game->addCard($card);
         $player->addCard($card);

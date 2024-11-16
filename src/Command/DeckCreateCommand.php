@@ -4,7 +4,7 @@ declare(strict_types=1);
 
 namespace App\Command;
 
-use App\DataFixtures\AppFixtures;
+use App\DataFixtures\StarterDeckLionTrait;
 use App\Entity\Deck;
 use Doctrine\ORM\EntityManagerInterface;
 use Symfony\Component\Console\Attribute\AsCommand;
@@ -20,6 +20,8 @@ use Symfony\Component\Uid\Uuid;
 )]
 class DeckCreateCommand extends Command
 {
+    use StarterDeckLionTrait;
+
     public function __construct(
         private readonly EntityManagerInterface $entityManager,
     ) {
@@ -37,8 +39,8 @@ class DeckCreateCommand extends Command
         $io = new SymfonyStyle($input, $output);
 
         $deck = new Deck(Uuid::v4()->toString());
-        $deck->setName('Aragorn Starter Deck');
-        $deck->setContent(AppFixtures::ARAGON_STARTER_DECK);
+        $deck->setName('Lion Clan Starter Deck');
+        $deck->setContent($this->getLionStarterCards());
         $this->entityManager->persist($deck);
         $this->entityManager->flush();
 

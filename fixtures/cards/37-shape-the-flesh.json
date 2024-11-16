@@ -1,0 +1,32 @@
+{
+    "allowed_clans": [
+        "*"
+    ],
+    "clan": "scorpion",
+    "cost": 1,
+    "deck_limit": 3,
+    "elements": [],
+    "fate": null,
+    "glory": null,
+    "honor": null,
+    "id": "37-shape-the-flesh",
+    "influence_cost": 1,
+    "influence_pool": null,
+    "uniqueness": false,
+    "military": null,
+    "military_bonus": "+1",
+    "name": "Shape the Flesh",
+    "political": null,
+    "political_bonus": "+1",
+    "role_restriction": null,
+    "side": "conflict",
+    "strength": null,
+    "strength_bonus": null,
+    "text": "This card's fate cost can only be paid for with fate on characters you control.<br>Attached character gains covert and cannot be honored.",
+    "traits": [
+        "maho",
+        "spell",
+        "water"
+    ],
+    "type": "attachment"
+}

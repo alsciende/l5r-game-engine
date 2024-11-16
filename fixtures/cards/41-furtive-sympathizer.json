@@ -1,0 +1,31 @@
+{
+    "allowed_clans": [
+        "dragon"
+    ],
+    "clan": "dragon",
+    "cost": 4,
+    "deck_limit": 3,
+    "elements": [],
+    "fate": null,
+    "glory": 0,
+    "honor": null,
+    "id": "41-furtive-sympathizer",
+    "influence_cost": null,
+    "influence_pool": null,
+    "uniqueness": false,
+    "military": "3",
+    "military_bonus": null,
+    "name": "Furtive Sympathizer",
+    "political": "3",
+    "political_bonus": null,
+    "role_restriction": "keeper",
+    "side": "dynasty",
+    "strength": null,
+    "strength_bonus": null,
+    "text": "<em>Keeper</em> role only.<br>Covert.<br><b>Action:</b> During a conflict in which this character is participating, if this character is ordinary - switch each participating character's base [conflict-military] skill with its base [conflict-political] skill until the end of the conflict.",
+    "traits": [
+        "monk",
+        "heretic"
+    ],
+    "type": "character"
+}

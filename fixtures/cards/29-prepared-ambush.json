@@ -1,0 +1,30 @@
+{
+    "allowed_clans": [
+        "*"
+    ],
+    "clan": "lion",
+    "cost": 0,
+    "deck_limit": 3,
+    "elements": [],
+    "fate": null,
+    "glory": null,
+    "honor": null,
+    "id": "29-prepared-ambush",
+    "influence_cost": 2,
+    "influence_pool": null,
+    "uniqueness": false,
+    "military": null,
+    "military_bonus": null,
+    "name": "Prepared Ambush",
+    "political": null,
+    "political_bonus": null,
+    "role_restriction": null,
+    "side": "conflict",
+    "strength": null,
+    "strength_bonus": null,
+    "text": "Attach to an unbroken province.<br>Limit 1 <em>Battlefield</em> attachment per province.<br>During a conflict at attached province, you may play each character in your provinces as if it were in your hand. Each character played this way must enter play in the conflict.",
+    "traits": [
+        "battlefield"
+    ],
+    "type": "attachment"
+}

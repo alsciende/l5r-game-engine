@@ -1,0 +1,31 @@
+{
+    "allowed_clans": [
+        "*"
+    ],
+    "clan": "lion",
+    "cost": 3,
+    "deck_limit": 3,
+    "elements": null,
+    "fate": null,
+    "glory": 1,
+    "honor": null,
+    "id": "01-master-of-the-spear",
+    "influence_cost": 3,
+    "influence_pool": null,
+    "is_restricted": false,
+    "military": "2",
+    "military_bonus": null,
+    "name": "Master of the Spear",
+    "political": "2",
+    "political_bonus": null,
+    "role_restriction": null,
+    "side": "conflict",
+    "strength": null,
+    "strength_bonus": null,
+    "text": "<b>Action:</b> While this character is attacking, your opponent must choose a participating character he or she controls – move that character home.",
+    "traits": [
+        "bushi"
+    ],
+    "type": "character",
+    "uniqueness": false
+}

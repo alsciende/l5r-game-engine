@@ -1,0 +1,31 @@
+{
+    "allowed_clans": [
+        "*"
+    ],
+    "clan": "neutral",
+    "cost": null,
+    "deck_limit": 1,
+    "elements": [
+        "air"
+    ],
+    "fate": null,
+    "glory": null,
+    "honor": null,
+    "id": "09-demonstrating-excellence",
+    "influence_cost": null,
+    "influence_pool": null,
+    "is_restricted": false,
+    "military": null,
+    "military_bonus": null,
+    "name": "Demonstrating Excellence",
+    "political": null,
+    "political_bonus": null,
+    "role_restriction": null,
+    "side": "province",
+    "strength": "3",
+    "strength_bonus": null,
+    "text": "This province gets +2 strength while you have an <em>Air</em> role.<br><b>Interrupt:</b> When this province is broken – gain 1 fate and draw 1 card.",
+    "traits": [],
+    "type": "province",
+    "uniqueness": false
+}

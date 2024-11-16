@@ -1,0 +1,30 @@
+{
+    "allowed_clans": [
+        "dragon"
+    ],
+    "clan": "dragon",
+    "cost": 2,
+    "deck_limit": 3,
+    "elements": [],
+    "fate": null,
+    "glory": 1,
+    "honor": null,
+    "id": "31-kitsuki-chiari",
+    "influence_cost": null,
+    "influence_pool": null,
+    "uniqueness": true,
+    "military": "1",
+    "military_bonus": null,
+    "name": "Kitsuki Chiari",
+    "political": "2",
+    "political_bonus": null,
+    "role_restriction": null,
+    "side": "dynasty",
+    "strength": null,
+    "strength_bonus": null,
+    "text": "No <em>Poison</em> attachments.<br><b>Reaction:</b> After a province you control is revealed, choose an opponent and name a card - reveal 4 random cards in that opponent's hand and discard each copy of the named card revealed this way.",
+    "traits": [
+        "courtier"
+    ],
+    "type": "character"
+}
