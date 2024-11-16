@@ -26,7 +26,7 @@ class Deck
     /**
      * @var array<string>
      */
-    #[ORM\Column(type: 'string[]')]
+    #[ORM\Column(type: 'text[]')]
     private array $content = [];
 
     public function __construct(string $id)

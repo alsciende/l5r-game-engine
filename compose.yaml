@@ -20,7 +20,7 @@ services:
     restart: always
     image: sosedoff/pgweb
     ports:
-      - "8081:8081"
+      - "8181:8081"
     links:
       - database:postgres
     environment:

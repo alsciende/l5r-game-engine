@@ -6,19 +6,15 @@ namespace App\Tests\MessageHandler;
 
 use App\DataFixtures\StarterCraneDeckTrait;
 use App\DataFixtures\StarterDeckLionTrait;
-use App\Entity\Event;
 use App\Entity\Game;
 use App\Entity\Player;
-use App\Message\BidTokens;
 use App\Message\CreateGame;
 use App\Message\JoinGame;
 use App\Repository\GameRepository;
-use App\Service\StateManager;
 use Doctrine\ORM\EntityManagerInterface;
 use Symfony\Bundle\FrameworkBundle\Test\KernelTestCase;
 use Symfony\Component\Messenger\MessageBusInterface;
 use Symfony\Component\Uid\Uuid;
-use Symfony\Component\Workflow\WorkflowInterface;
 
 class MessageHandlerTest extends KernelTestCase
 {
@@ -99,60 +95,7 @@ class MessageHandlerTest extends KernelTestCase
         $this->assertSame($game->getId(), $jane->getGame()?->getId());
         $this->assertSame(2, $game->getPlayers()->count());
 
-        $this->assertSame('bid_tokens', $game->getCurrentPlace());
-
-        return $gameId;
-    }
-
-    /**
-     * @depends testJoinGameHandler
-     */
-    public function testBidTokensHandler(string $gameId): string
-    {
-        $kernel = self::bootKernel();
-        $container = static::getContainer();
-
-        /** @var GameRepository $gameRepository */
-        $gameRepository = $container->get(GameRepository::class);
-        $game = $gameRepository->get($gameId);
-        $this->assertSame(2, $game->getPlayers()->count());
-        $john = $game->getPlayers()->get(0);
-        $this->assertInstanceOf(Player::class, $john);
-        $jane = $game->getPlayers()->get(1);
-        $this->assertInstanceOf(Player::class, $jane);
-
-        // verify the initial place
-        $this->assertSame('bid_tokens', $game->getCurrentPlace());
-
-        /** @var EntityManagerInterface $manager */
-        $manager = $container->get('doctrine.orm.entity_manager');
-
-        /** @var WorkflowInterface $workflow */
-        $workflow = $container->get('state_machine.game');
-        $this->assertCount(0, $workflow->getEnabledTransitions($game));
-
-        /** @var MessageBusInterface $bus */
-        $bus = $container->get(MessageBusInterface::class);
-
-        $bus->dispatch(new BidTokens($gameId, $john->getId(), 1));
-
-        // verify place has not changed
-        $this->assertSame('bid_tokens', $game->getCurrentPlace());
-
-        $bus->dispatch(new BidTokens($gameId, $jane->getId(), 2));
-        // verify the transition has been applied by GameEngine
-        $this->assertSame('choose_fellowship', $game->getCurrentPlace());
-
-        /** @var StateManager $stateManager */
-        $stateManager = $container->get(StateManager::class);
-
-        $this->assertCount(2, $stateManager->getState($game)->bids);
-
-        $event = $manager->getRepository(Event::class)->findOneBy([], [
-            'id' => 'desc',
-        ]);
-        $this->assertInstanceOf(Event::class, $event);
-        $this->assertSame(BidTokens::class, $event->getName());
+        $this->assertSame('dynasty_phase_begins', $game->getCurrentPlace());
 
         return $gameId;
     }

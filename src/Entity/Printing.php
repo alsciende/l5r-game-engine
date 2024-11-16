@@ -15,7 +15,7 @@ class Printing
 {
     #[ORM\Id]
     #[ORM\Column(type: 'integer')]
-    #[ORM\GeneratedValue(strategy: 'IDENTITY')]
+    #[ORM\GeneratedValue(strategy: 'SEQUENCE')]
     private ?int $id = null;
 
     #[ORM\ManyToOne(targetEntity: LogicalCard::class, inversedBy: 'printings')]

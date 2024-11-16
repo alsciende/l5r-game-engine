@@ -36,7 +36,7 @@ abstract class PhysicalCard
     private string $id;
 
     #[ORM\Column]
-    private LogicalCard $logicalCard;
+    private string $logicalCardId;
 
     #[ORM\Column(length: 255, nullable: true)]
     private ?string $currentPlace = null;
@@ -58,15 +58,12 @@ abstract class PhysicalCard
     #[ORM\JoinColumn(nullable: false)]
     private ?Player $player = null;
 
-    #[ORM\Column(length: 255)]
-    private ?string $image = null;
-
     private ?string $side = null;
 
-    public function __construct(string $id, LogicalCard $logicalCard)
+    public function __construct(string $id, string $logicalCardId)
     {
         $this->id = $id;
-        $this->logicalCard = $logicalCard;
+        $this->logicalCardId = $logicalCardId;
     }
 
     public function getId(): string
@@ -74,9 +71,9 @@ abstract class PhysicalCard
         return $this->id;
     }
 
-    public function getLogicalCard(): LogicalCard
+    public function getLogicalCardId(): string
     {
-        return $this->logicalCard;
+        return $this->logicalCardId;
     }
 
     public function getCurrentPlace(): ?string
@@ -141,18 +138,6 @@ abstract class PhysicalCard
     public function setPlayer(?Player $player): static
     {
         $this->player = $player;
-
-        return $this;
-    }
-
-    public function getImage(): ?string
-    {
-        return $this->image;
-    }
-
-    public function setImage(string $image): static
-    {
-        $this->image = $image;
 
         return $this;
     }
