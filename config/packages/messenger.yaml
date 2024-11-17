@@ -22,9 +22,12 @@ framework:
 
             # Route your messages to the transports
 
+        default_bus: default.bus
+
         buses:
-            messenger.bus.default:
+            default.bus:
                 middleware:
                     - doctrine_transaction
                     - 'App\Middleware\WorkflowTransitionMiddleware'
                     - 'App\Middleware\EventRecordingMiddleware'
+            transition.bus:

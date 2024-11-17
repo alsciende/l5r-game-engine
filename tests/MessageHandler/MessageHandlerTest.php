@@ -14,8 +14,11 @@ use App\Message\CreateGame;
 use App\Message\JoinGame;
 use App\Repository\CardRepository;
 use App\Repository\GameRepository;
+use Doctrine\Bundle\DoctrineBundle\DataCollector\DoctrineDataCollector;
 use Doctrine\ORM\EntityManagerInterface;
 use Symfony\Bundle\FrameworkBundle\Test\KernelTestCase;
+use Symfony\Component\HttpKernel\DataCollector\MemoryDataCollector;
+use Symfony\Component\HttpKernel\Profiler\Profiler;
 use Symfony\Component\Messenger\MessageBusInterface;
 use Symfony\Component\Uid\Uuid;
 
@@ -24,9 +27,13 @@ class MessageHandlerTest extends KernelTestCase
     use StarterDeckLionTrait;
     use StarterCraneDeckTrait;
 
+    protected function setUp(): void
+    {
+        self::bootKernel();
+    }
+
     public function testCreateGameHandler(): string
     {
-        $kernel = self::bootKernel();
         $container = static::getContainer();
 
         $gameId = Uuid::v4()->toString();
@@ -34,7 +41,8 @@ class MessageHandlerTest extends KernelTestCase
         /** @var MessageBusInterface $bus */
         $bus = $container->get(MessageBusInterface::class);
 
-        $bus->dispatch(new CreateGame($gameId));
+        $message = new CreateGame($gameId);
+        $bus->dispatch($message);
 
         /** @var EntityManagerInterface $manager */
         $manager = $container->get(EntityManagerInterface::class);
@@ -53,7 +61,6 @@ class MessageHandlerTest extends KernelTestCase
      */
     public function testJoinGameHandler(string $gameId): string
     {
-        $kernel = self::bootKernel();
         $container = static::getContainer();
 
         /** @var EntityManagerInterface $manager */
@@ -67,7 +74,7 @@ class MessageHandlerTest extends KernelTestCase
         $bus = $container->get(MessageBusInterface::class);
 
         $playerId = Uuid::v4()->toString();
-        $bus->dispatch(new JoinGame(
+        $message = new JoinGame(
             $game->getId(),
             $playerId,
             'john',
@@ -75,15 +82,16 @@ class MessageHandlerTest extends KernelTestCase
             '1',
             null,
             JoinGame::generateCardsIds($this->getLionStarterCards()),
-        ));
+        );
+        $bus->dispatch($message);
 
         $john = $manager->getRepository(Player::class)->find($playerId);
         $this->assertInstanceOf(Player::class, $john);
-        $this->assertSame($game->getId(), $john->getGame()?->getId());
+        $this->assertSame($game->getId(), $john->getGame()->getId());
         $this->assertSame(1, $game->getPlayers()->count());
 
         $playerId = Uuid::v4()->toString();
-        $jane = $bus->dispatch(new JoinGame(
+        $message = new JoinGame(
             $game->getId(),
             $playerId,
             'jane',
@@ -91,11 +99,13 @@ class MessageHandlerTest extends KernelTestCase
             '1',
             null,
             JoinGame::generateCardsIds($this->getCraneStarterCards()),
-        ));
+        );
+
+        $jane = $bus->dispatch($message);
 
         $jane = $manager->getRepository(Player::class)->find($playerId);
         $this->assertInstanceOf(Player::class, $jane);
-        $this->assertSame($game->getId(), $jane->getGame()?->getId());
+        $this->assertSame($game->getId(), $jane->getGame()->getId());
         $this->assertSame(2, $game->getPlayers()->count());
 
         $this->assertSame('place_provinces', $game->getCurrentPlace());
@@ -108,7 +118,6 @@ class MessageHandlerTest extends KernelTestCase
      */
     public function testChooseStrongholdProvinceHandler(string $gameId): string
     {
-        $kernel = self::bootKernel();
         $container = static::getContainer();
 
         /** @var EntityManagerInterface $manager */

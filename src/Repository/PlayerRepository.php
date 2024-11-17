@@ -34,7 +34,7 @@ class PlayerRepository extends ServiceEntityRepository
             throw new PlayerNotFoundException($playerId);
         }
 
-        if ($game instanceof Game && $player->getGame()?->getId() !== $game->getId()) {
+        if ($game instanceof Game && $player->getGame()->getId() !== $game->getId()) {
             throw new GameMismatchException();
         }
 

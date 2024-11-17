@@ -4,6 +4,8 @@ declare(strict_types=1);
 
 namespace App\Entity;
 
+use App\Enum\Type;
+use App\Exception\Rules\DeckConstructionException;
 use App\Repository\PlayerRepository;
 use Doctrine\Common\Collections\ArrayCollection;
 use Doctrine\Common\Collections\Collection;
@@ -16,6 +18,7 @@ use Doctrine\ORM\Mapping\OrderBy;
  */
 #[ORM\Entity(repositoryClass: PlayerRepository::class)]
 #[ORM\Table('players')]
+#[ORM\HasLifecycleCallbacks]
 class Player
 {
     #[ORM\Id]
@@ -27,7 +30,7 @@ class Player
 
     #[ORM\ManyToOne(inversedBy: 'players')]
     #[ORM\JoinColumn(nullable: false)]
-    private ?Game $game = null;
+    private Game $game;
 
     #[ORM\Column(length: 255)]
     private ?string $userId = null;
@@ -51,6 +54,91 @@ class Player
         $this->physicalCards = new ArrayCollection();
     }
 
+    /**
+     * @var array<string, list<PhysicalCard>>
+     */
+    private array $cardsByPlaceCollection = [];
+
+    /**
+     * @var array<string, list<PhysicalCard>>
+     */
+    private array $cardsByTypeCollection = [];
+
+    #[ORM\PostLoad]
+    public function onPostLoad(): void
+    {
+        foreach ($this->physicalCards as $card) {
+            $place = $card->getCurrentPlace();
+            if ($place === null) {
+                throw new \LogicException('Uninitialized card cannot be grouped');
+            }
+
+            if (! array_key_exists($place, $this->cardsByPlaceCollection)) {
+                $this->cardsByPlaceCollection[$place] = [];
+            }
+
+            $this->cardsByPlaceCollection[$place][] = $card;
+
+            $type = $card->getLogicalCard()->getType()->value;
+            if (! array_key_exists($type, $this->cardsByTypeCollection)) {
+                $this->cardsByTypeCollection[$type] = [];
+            }
+
+            $this->cardsByTypeCollection[$type][] = $card;
+        }
+    }
+
+    /**
+     * @return array<string, list<PhysicalCard>>
+     */
+    public function getCardsByPlaceCollection(): array
+    {
+        return $this->cardsByPlaceCollection;
+    }
+
+    /**
+     * @return list<PhysicalCard>
+     */
+    public function getCardsByPlace(string $place): array
+    {
+        if (! array_key_exists($place, $this->cardsByPlaceCollection)) {
+            return [];
+        }
+
+        return $this->cardsByPlaceCollection[$place];
+    }
+
+    /**
+     * @return array<string, list<PhysicalCard>>
+     */
+    public function getCardsByTypeCollection(): array
+    {
+        return $this->cardsByTypeCollection;
+    }
+
+    /**
+     * @return list<PhysicalCard>
+     */
+    public function getCardsByType(Type $type): array
+    {
+        if (! array_key_exists($type->value, $this->cardsByTypeCollection)) {
+            return [];
+        }
+
+        return $this->cardsByTypeCollection[$type->value];
+    }
+
+    public function getStrongholdLogicalCard(): LogicalCard
+    {
+        $strongholds = $this->getCardsByType(Type::STRONGHOLD);
+
+        if (count($strongholds) !== 1) {
+            throw new DeckConstructionException('Deck must contain exactly one Stronghold');
+        }
+
+        return $strongholds[0]->getLogicalCard();
+    }
+
     public function getId(): string
     {
         return $this->id;
@@ -66,12 +154,12 @@ class Player
         $this->state = $state;
     }
 
-    public function getGame(): ?Game
+    public function getGame(): Game
     {
         return $this->game;
     }
 
-    public function setGame(?Game $game): static
+    public function setGame(Game $game): static
     {
         $this->game = $game;
 
@@ -96,6 +184,14 @@ class Player
     public function getPhysicalCards(): Collection
     {
         return $this->physicalCards;
+    }
+
+    /**
+     * @param ArrayCollection<int, PhysicalCard> $physicalCards
+     */
+    public function setPhysicalCards(ArrayCollection $physicalCards): void
+    {
+        $this->physicalCards = $physicalCards;
     }
 
     public function addCard(PhysicalCard $card): static

@@ -3,3 +3,4 @@ services:
         class: App\Notifier\LoggerNotifier
         arguments:
             - '@monolog.logger.notification'
+    Symfony\Component\HttpKernel\Profiler\Profiler: '@profiler'
