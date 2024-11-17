@@ -7,14 +7,16 @@ namespace App\Workflow;
 use App\Entity\Game;
 use App\Entity\Player;
 use App\Service\PlayerStateManager;
+use Psr\Log\LoggerInterface;
 use Symfony\Component\Workflow\Attribute\AsGuardListener;
 use Symfony\Component\Workflow\Event\GuardEvent;
 
 #[AsGuardListener(workflow: 'game', transition: 'setup_game')]
-class SetupGameGuardListener
+readonly class SetupGameGuardListener
 {
     public function __construct(
-        readonly private PlayerStateManager $stateManager,
+        private PlayerStateManager $stateManager,
+        private LoggerInterface $logger,
     ) {
     }
 
@@ -26,14 +28,18 @@ class SetupGameGuardListener
         foreach ($game->getPlayers() as $player) {
             if ($this->hasPlayerSelectedStrongholdProvince($player) === false) {
                 $event->setBlocked(true, 'Player has not selected stronghold province.');
+                $this->logger->debug('SetupGameGuardListener', [
+                    'is_blocked' => true,
+                    'player_id' => $player->getId(),
+                ]);
+
+                return;
             }
         }
     }
 
     private function hasPlayerSelectedStrongholdProvince(Player $player): bool
     {
-        $state = $this->stateManager->getState($player);
-
-        return is_string($state->strongholdProvinceId);
+        return is_string($this->stateManager->getState($player)->getStrongholdProvinceId());
     }
 }

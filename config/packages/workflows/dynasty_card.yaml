@@ -11,23 +11,24 @@ framework:
                 - App\Entity\CardTypes\DynastyCard
             initial_marking: dynasty_draw_deck
             places:
-                - dynasty_draw_deck
-                - hand
-                - in_play
-                - dynasty_discard_pile
+                - !php/const App\Entity\CardTypes\DynastyCard::STATE_DRAW_DECK
+                - !php/const App\Entity\CardTypes\DynastyCard::STATE_PROVINCE_FACEDOWN
+                - !php/const App\Entity\CardTypes\DynastyCard::STATE_PROVINCE_FACEUP
+                - !php/const App\Entity\CardTypes\DynastyCard::STATE_IN_PLAY
+                - !php/const App\Entity\CardTypes\DynastyCard::STATE_DISCARD_PILE
             transitions:
                 draw_card:
-                    from: dynasty_draw_deck
-                    to: hand
-                play_card:
-                    from: [hand,dynasty_discard_pile]
-                    to: in_play
-                discard_card:
-                    from: [dynasty_draw_deck,hand,in_play]
-                    to: dynasty_discard_pile
-                put_back:
-                    from: [hand,dynasty_discard_pile]
-                    to: dynasty_draw_deck
-                take_back:
-                    from: dynasty_discard_pile
-                    to: hand
+                    from: !php/const App\Entity\CardTypes\DynastyCard::STATE_DRAW_DECK
+                    to: !php/const App\Entity\CardTypes\DynastyCard::STATE_PROVINCE_FACEDOWN
+                turn_faceup:
+                    from: !php/const App\Entity\CardTypes\DynastyCard::STATE_PROVINCE_FACEDOWN
+                    to: !php/const App\Entity\CardTypes\DynastyCard::STATE_PROVINCE_FACEUP
+                turn_facedown:
+                    from: !php/const App\Entity\CardTypes\DynastyCard::STATE_PROVINCE_FACEUP
+                    to: !php/const App\Entity\CardTypes\DynastyCard::STATE_PROVINCE_FACEDOWN
+                play:
+                    from: !php/const App\Entity\CardTypes\DynastyCard::STATE_PROVINCE_FACEUP
+                    to: !php/const App\Entity\CardTypes\DynastyCard::STATE_IN_PLAY
+                discard:
+                    from: !php/const App\Entity\CardTypes\DynastyCard::STATE_IN_PLAY
+                    to: !php/const App\Entity\CardTypes\DynastyCard::STATE_DISCARD_PILE

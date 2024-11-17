@@ -45,6 +45,9 @@ abstract class PhysicalCard
     #[ORM\Column(length: 255)]
     private ?string $title = null;
 
+    #[ORM\Column(nullable: true)]
+    private ?int $position = null;
+
     /**
      * @var array<string,mixed>
      */
@@ -99,6 +102,16 @@ abstract class PhysicalCard
         $this->title = $title;
 
         return $this;
+    }
+
+    public function getPosition(): ?int
+    {
+        return $this->position;
+    }
+
+    public function setPosition(?int $position): void
+    {
+        $this->position = $position;
     }
 
     /**

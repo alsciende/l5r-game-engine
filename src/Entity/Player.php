@@ -9,6 +9,7 @@ use Doctrine\Common\Collections\ArrayCollection;
 use Doctrine\Common\Collections\Collection;
 use Doctrine\DBAL\Types\Types;
 use Doctrine\ORM\Mapping as ORM;
+use Doctrine\ORM\Mapping\OrderBy;
 
 /**
  * This is one of the 2 players in a game.
@@ -34,7 +35,10 @@ class Player
     /**
      * @var ArrayCollection<int, PhysicalCard>
      */
-    #[ORM\OneToMany(mappedBy: 'player', targetEntity: PhysicalCard::class, orphanRemoval: true)]
+    #[ORM\OneToMany(mappedBy: 'player', targetEntity: PhysicalCard::class, fetch: 'EAGER', orphanRemoval: true)]
+    #[OrderBy([
+        'position' => 'ASC',
+    ])]
     private Collection $physicalCards;
 
     #[ORM\ManyToOne]

@@ -38,7 +38,7 @@ readonly class ChooseStrongholdProvinceHandler
 
         $this->stateManager->withState(
             $player,
-            fn (PlayerState $state) => $state->setStrongholdProvince($card),
+            fn (PlayerState $state) => $state->setStrongholdProvinceId($card->getId()),
         );
     }
 }

@@ -8,6 +8,7 @@ use App\Entity\Game;
 use App\Entity\Player;
 use App\Service\GameStateManager;
 use App\State\GameState;
+use Psr\Log\LoggerInterface;
 use Symfony\Component\Workflow\Attribute\AsTransitionListener;
 use Symfony\Component\Workflow\Event\TransitionEvent;
 
@@ -16,6 +17,7 @@ readonly class StartGameTransitionListener
 {
     public function __construct(
         private GameStateManager $stateManager,
+        private LoggerInterface $logger,
     ) {
     }
 
@@ -31,6 +33,10 @@ readonly class StartGameTransitionListener
             $game,
             fn (GameState $state) => $state->setFirstPlayer($this->selectRandomFirstPlayer($game))
         );
+
+        $this->logger->debug('StartGameTransitionListener', [
+            'first_player_id' => $this->stateManager->getState($game)->firstPlayerId,
+        ]);
     }
 
     private function selectRandomFirstPlayer(Game $game): Player

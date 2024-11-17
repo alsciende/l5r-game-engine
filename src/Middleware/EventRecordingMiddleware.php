@@ -7,7 +7,6 @@ namespace App\Middleware;
 use App\Entity\Event;
 use App\Message\ActionInterface;
 use Doctrine\ORM\EntityManagerInterface;
-use Psr\Log\LoggerInterface;
 use Symfony\Component\Messenger\Envelope;
 use Symfony\Component\Messenger\Middleware\MiddlewareInterface;
 use Symfony\Component\Messenger\Middleware\StackInterface;
@@ -21,7 +20,6 @@ readonly class EventRecordingMiddleware implements MiddlewareInterface
     public function __construct(
         private EntityManagerInterface $entityManager,
         private SerializerInterface $serializer,
-        private LoggerInterface $logger,
     ) {
     }
 
@@ -44,11 +42,6 @@ readonly class EventRecordingMiddleware implements MiddlewareInterface
     {
         $name = $action::class;
         $payload = $this->serializer->serialize($action, 'json');
-
-        $this->logger->debug('EventRecordingMiddleware', [
-            'name' => $name,
-            'payload' => $payload,
-        ]);
 
         $this->entityManager->persist(new Event($name, $payload));
     }

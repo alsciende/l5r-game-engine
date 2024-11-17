@@ -44,6 +44,11 @@ readonly class WorkflowTransitionMiddleware implements MiddlewareInterface
     private function checkTransition(Game $game): void
     {
         $availableTransitions = $this->gameStateMachine->getEnabledTransitions($game);
+        $this->logger->debug('WorkflowTransitionMiddleware', [
+            'game_id' => $game->getId(),
+            'available_transitions' => count($availableTransitions),
+        ]);
+
         foreach ($availableTransitions as $transition) {
             $isAuto = $this->gameStateMachine->getMetadataStore()->getMetadata('auto', $transition);
             $this->logger->debug('available_transition', [

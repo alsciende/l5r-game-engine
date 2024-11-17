@@ -11,10 +11,10 @@ framework:
                 - App\Entity\CardTypes\ConflictCard
             initial_marking: conflict_draw_deck
             places:
-                - conflict_draw_deck
-                - hand
-                - in_play
-                - conflict_discard_pile
+                - !php/const App\Entity\CardTypes\ConflictCard::STATE_DRAW_DECK
+                - !php/const App\Entity\CardTypes\ConflictCard::STATE_HAND
+                - !php/const App\Entity\CardTypes\ConflictCard::STATE_IN_PLAY
+                - !php/const App\Entity\CardTypes\ConflictCard::STATE_DISCARD_PILE
             transitions:
                 draw_card:
                     from: conflict_draw_deck
