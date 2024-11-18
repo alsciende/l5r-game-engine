@@ -12,7 +12,7 @@ use App\Service\DeckShuffler;
 use Symfony\Component\Messenger\Attribute\AsMessageHandler;
 
 #[AsMessageHandler]
-readonly class ShuffleConflictDeckHandler
+final readonly class ShuffleConflictDeckHandler
 {
     public function __construct(
         private GameRepository $gameRepository,

@@ -4,7 +4,7 @@ declare(strict_types=1);
 
 namespace App\Message;
 
-readonly class ShuffleConflictDeck implements PlayerActionInterface
+final readonly class ShuffleConflictDeck implements PlayerActionInterface
 {
     public function __construct(
         private string $gameId,

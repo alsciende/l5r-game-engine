@@ -13,7 +13,7 @@ use Symfony\Component\Messenger\Attribute\AsMessageHandler;
 use Symfony\Component\Workflow\WorkflowInterface;
 
 #[AsMessageHandler]
-readonly class CreateGameHandler
+final readonly class CreateGameHandler
 {
     public function __construct(
         private EntityManagerInterface $entityManager,

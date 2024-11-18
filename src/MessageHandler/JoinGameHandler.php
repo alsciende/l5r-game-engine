@@ -16,7 +16,7 @@ use Psr\Log\LoggerInterface;
 use Symfony\Component\Messenger\Attribute\AsMessageHandler;
 
 #[AsMessageHandler]
-readonly class JoinGameHandler
+final readonly class JoinGameHandler
 {
     public function __construct(
         private EntityManagerInterface $entityManager,

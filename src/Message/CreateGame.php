@@ -4,7 +4,7 @@ declare(strict_types=1);
 
 namespace App\Message;
 
-readonly class CreateGame implements ActionInterface
+final readonly class CreateGame implements ActionInterface
 {
     public function __construct(
         private string $gameId,

@@ -4,6 +4,8 @@ declare(strict_types=1);
 
 namespace App\Entity;
 
+use App\Entity\CardTypes\ConflictCard;
+use App\Entity\CardTypes\DynastyCard;
 use App\Enum\Type;
 use App\Exception\Rules\DeckConstructionException;
 use App\Repository\PlayerRepository;
@@ -38,7 +40,7 @@ class Player
     /**
      * @var ArrayCollection<int, PhysicalCard>
      */
-    #[ORM\OneToMany(mappedBy: 'player', targetEntity: PhysicalCard::class, fetch: 'EAGER', orphanRemoval: true)]
+    #[ORM\OneToMany(mappedBy: 'player', targetEntity: PhysicalCard::class, fetch: 'LAZY', orphanRemoval: true)]
     #[OrderBy([
         'position' => 'ASC',
     ])]
@@ -67,6 +69,13 @@ class Player
     #[ORM\PostLoad]
     public function onPostLoad(): void
     {
+        $this->resetCardGroups();
+    }
+
+    public function resetCardGroups(): void
+    {
+        $this->cardsByPlaceCollection = [];
+        $this->cardsByTypeCollection = [];
         foreach ($this->physicalCards as $card) {
             $place = $card->getCurrentPlace();
             if ($place === null) {
@@ -80,12 +89,22 @@ class Player
             $this->cardsByPlaceCollection[$place][] = $card;
 
             $type = $card->getLogicalCard()->getType()->value;
+
             if (! array_key_exists($type, $this->cardsByTypeCollection)) {
                 $this->cardsByTypeCollection[$type] = [];
             }
 
             $this->cardsByTypeCollection[$type][] = $card;
         }
+
+        usort(
+            $this->cardsByPlaceCollection[DynastyCard::STATE_DRAW_DECK],
+            fn (PhysicalCard $card) => $card->getPosition() ?? 0,
+        );
+        usort(
+            $this->cardsByPlaceCollection[ConflictCard::STATE_DRAW_DECK],
+            fn (PhysicalCard $card) => $card->getPosition() ?? 0,
+        );
     }
 
     /**

@@ -4,11 +4,12 @@ declare(strict_types=1);
 
 namespace App\Message;
 
-final readonly class ShuffleDynastyDeck implements PlayerActionInterface
+final readonly class GainHonor implements PlayerActionInterface
 {
     public function __construct(
         private string $gameId,
         private string $playerId,
+        private int $honorGain,
     ) {
     }
 
@@ -20,5 +21,10 @@ final readonly class ShuffleDynastyDeck implements PlayerActionInterface
     public function getPlayerId(): string
     {
         return $this->playerId;
+    }
+
+    public function getHonorGain(): int
+    {
+        return $this->honorGain;
     }
 }

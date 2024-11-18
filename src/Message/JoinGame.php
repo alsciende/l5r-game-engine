@@ -6,7 +6,7 @@ namespace App\Message;
 
 use Symfony\Component\Uid\Uuid;
 
-readonly class JoinGame implements PlayerActionInterface
+final readonly class JoinGame implements PlayerActionInterface
 {
     /**
      * @param array<string, string> $cardIds

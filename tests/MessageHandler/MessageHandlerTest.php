@@ -6,6 +6,8 @@ namespace App\Tests\MessageHandler;
 
 use App\DataFixtures\StarterCraneDeckTrait;
 use App\DataFixtures\StarterDeckLionTrait;
+use App\Entity\CardTypes\ConflictCard;
+use App\Entity\CardTypes\DynastyCard;
 use App\Entity\Game;
 use App\Entity\PhysicalCard;
 use App\Entity\Player;
@@ -14,11 +16,9 @@ use App\Message\CreateGame;
 use App\Message\JoinGame;
 use App\Repository\CardRepository;
 use App\Repository\GameRepository;
-use Doctrine\Bundle\DoctrineBundle\DataCollector\DoctrineDataCollector;
+use App\Service\PlayerStateManager;
 use Doctrine\ORM\EntityManagerInterface;
 use Symfony\Bundle\FrameworkBundle\Test\KernelTestCase;
-use Symfony\Component\HttpKernel\DataCollector\MemoryDataCollector;
-use Symfony\Component\HttpKernel\Profiler\Profiler;
 use Symfony\Component\Messenger\MessageBusInterface;
 use Symfony\Component\Uid\Uuid;
 
@@ -107,6 +107,8 @@ class MessageHandlerTest extends KernelTestCase
         $this->assertInstanceOf(Player::class, $jane);
         $this->assertSame($game->getId(), $jane->getGame()->getId());
         $this->assertSame(2, $game->getPlayers()->count());
+        $this->assertSame(52, $john->getPhysicalCards()->count());
+        $this->assertSame(52, $jane->getPhysicalCards()->count());
 
         $this->assertSame('place_provinces', $game->getCurrentPlace());
 
@@ -129,14 +131,19 @@ class MessageHandlerTest extends KernelTestCase
         $this->assertSame(2, $game->getPlayers()->count());
         $john = $game->getPlayers()->get(0);
         $this->assertInstanceOf(Player::class, $john);
+        $this->assertSame(52, $john->getPhysicalCards()->count());
         $jane = $game->getPlayers()->get(1);
         $this->assertInstanceOf(Player::class, $jane);
+        $this->assertSame(52, $jane->getPhysicalCards()->count());
 
         /** @var MessageBusInterface $bus */
         $bus = $container->get(MessageBusInterface::class);
 
         /** @var CardRepository $cardRepository */
         $cardRepository = $container->get(CardRepository::class);
+
+        /** @var PlayerStateManager $playerStateManager */
+        $playerStateManager = $container->get(PlayerStateManager::class);
 
         $province = $cardRepository->findOneBy([
             'game' => $game,
@@ -152,6 +159,8 @@ class MessageHandlerTest extends KernelTestCase
         );
 
         $bus->dispatch($message);
+        $this->assertSame(52, $john->getPhysicalCards()->count());
+        $this->assertSame(52, $jane->getPhysicalCards()->count());
 
         $this->assertSame('place_provinces', $game->getCurrentPlace());
 
@@ -171,6 +180,14 @@ class MessageHandlerTest extends KernelTestCase
         $bus->dispatch($message);
 
         $this->assertSame('dynasty_phase_begins', $game->getCurrentPlace());
+
+        $dynastyPositions = array_map(
+            fn (PhysicalCard $card) => $card->getPosition(),
+            $john->getCardsByPlace(DynastyCard::STATE_DRAW_DECK)
+        );
+        $this->assertSame(count($dynastyPositions), count(array_unique($dynastyPositions)));
+        $this->assertSame(19, count($john->getCardsByPlace(ConflictCard::STATE_DRAW_DECK)));
+        $this->assertSame(12, $playerStateManager->getState($john)->getHonor());
 
         return $gameId;
     }
