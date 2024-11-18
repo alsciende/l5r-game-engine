@@ -6,11 +6,14 @@ namespace App\Workflow;
 
 use App\Entity\Game;
 use App\Entity\Player;
+use App\Enum\Type;
 use App\Exception\Data\DataException;
 use App\Message\DrawConflictCards;
+use App\Message\FillProvince;
 use App\Message\GainHonor;
 use App\Message\ShuffleConflictDeck;
 use App\Message\ShuffleDynastyDeck;
+use App\Service\PlayerStateManager;
 use Psr\Log\LoggerInterface;
 use Symfony\Component\Messenger\MessageBusInterface;
 use Symfony\Component\Workflow\Attribute\AsTransitionListener;
@@ -24,6 +27,7 @@ readonly class SetupGameTransitionListener
     public function __construct(
         private LoggerInterface $logger,
         private MessageBusInterface $transitionBus,
+        private PlayerStateManager $stateManager,
     ) {
     }
 
@@ -62,8 +66,8 @@ readonly class SetupGameTransitionListener
         );
 
         // gain starting honor
-        $stronghold = $player->getStrongholdLogicalCard();
-        $honor = $stronghold->getHonor();
+        $stronghold = $player->getStronghold();
+        $honor = $stronghold->getLogicalCard()->getHonor();
         if ($honor === null) {
             throw new DataException('Stronghold has no honor');
         }
@@ -72,7 +76,18 @@ readonly class SetupGameTransitionListener
         );
 
         // fill provinces
-        // @TODO create and handle message to put first card of Dynasty deck on given Province
+        $strongholdProvinceId = $this->stateManager->getState($player)->getStrongholdProvinceId();
+        $provinces = $player->getCardsByType(Type::PROVINCE);
+        $stronghold = $player->getStronghold();
+        foreach ($provinces as $province) {
+            if ($province->getId() === $strongholdProvinceId) {
+                $province->addTopCard($stronghold);
+            } else {
+                $this->transitionBus->dispatch(
+                    new FillProvince($player->getGame()->getId(), $player->getId(), $province->getId())
+                );
+            }
+        }
 
         // draw starting hand
         $this->transitionBus->dispatch(

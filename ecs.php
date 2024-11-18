@@ -2,6 +2,7 @@
 
 declare(strict_types=1);
 
+use PHP_CodeSniffer\Standards\Generic\Sniffs\Metrics\CyclomaticComplexitySniff;
 use Symplify\EasyCodingStandard\Config\ECSConfig;
 
 return ECSConfig::configure()
@@ -18,4 +19,6 @@ return ECSConfig::configure()
     )
     ->withPhpCsFixerSets(
         symfony: true
-    );
+    )
+    ->withConfiguredRule(CyclomaticComplexitySniff::class, [])
+;

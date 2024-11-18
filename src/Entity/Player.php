@@ -147,7 +147,7 @@ class Player
         return $this->cardsByTypeCollection[$type->value];
     }
 
-    public function getStrongholdLogicalCard(): LogicalCard
+    public function getStronghold(): PhysicalCard
     {
         $strongholds = $this->getCardsByType(Type::STRONGHOLD);
 
@@ -155,7 +155,7 @@ class Player
             throw new DeckConstructionException('Deck must contain exactly one Stronghold');
         }
 
-        return $strongholds[0]->getLogicalCard();
+        return $strongholds[0];
     }
 
     public function getId(): string

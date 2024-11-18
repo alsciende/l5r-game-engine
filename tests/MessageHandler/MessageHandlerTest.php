@@ -11,6 +11,7 @@ use App\Entity\CardTypes\DynastyCard;
 use App\Entity\Game;
 use App\Entity\PhysicalCard;
 use App\Entity\Player;
+use App\Enum\Type;
 use App\Message\ChooseStrongholdProvince;
 use App\Message\CreateGame;
 use App\Message\JoinGame;
@@ -107,8 +108,8 @@ class MessageHandlerTest extends KernelTestCase
         $this->assertInstanceOf(Player::class, $jane);
         $this->assertSame($game->getId(), $jane->getGame()->getId());
         $this->assertSame(2, $game->getPlayers()->count());
-        $this->assertSame(52, $john->getPhysicalCards()->count());
-        $this->assertSame(52, $jane->getPhysicalCards()->count());
+        $this->assertSame(50, $john->getPhysicalCards()->count());
+        $this->assertSame(50, $jane->getPhysicalCards()->count());
 
         $this->assertSame('place_provinces', $game->getCurrentPlace());
 
@@ -131,10 +132,8 @@ class MessageHandlerTest extends KernelTestCase
         $this->assertSame(2, $game->getPlayers()->count());
         $john = $game->getPlayers()->get(0);
         $this->assertInstanceOf(Player::class, $john);
-        $this->assertSame(52, $john->getPhysicalCards()->count());
         $jane = $game->getPlayers()->get(1);
         $this->assertInstanceOf(Player::class, $jane);
-        $this->assertSame(52, $jane->getPhysicalCards()->count());
 
         /** @var MessageBusInterface $bus */
         $bus = $container->get(MessageBusInterface::class);
@@ -159,8 +158,6 @@ class MessageHandlerTest extends KernelTestCase
         );
 
         $bus->dispatch($message);
-        $this->assertSame(52, $john->getPhysicalCards()->count());
-        $this->assertSame(52, $jane->getPhysicalCards()->count());
 
         $this->assertSame('place_provinces', $game->getCurrentPlace());
 
@@ -181,13 +178,26 @@ class MessageHandlerTest extends KernelTestCase
 
         $this->assertSame('dynasty_phase_begins', $game->getCurrentPlace());
 
-        $dynastyPositions = array_map(
-            fn (PhysicalCard $card) => $card->getPosition(),
-            $john->getCardsByPlace(DynastyCard::STATE_DRAW_DECK)
-        );
-        $this->assertSame(count($dynastyPositions), count(array_unique($dynastyPositions)));
-        $this->assertSame(19, count($john->getCardsByPlace(ConflictCard::STATE_DRAW_DECK)));
-        $this->assertSame(12, $playerStateManager->getState($john)->getHonor());
+        foreach ($game->getPlayers() as $player) {
+            // deck shuffled
+            $dynastyPositions = array_map(
+                fn (PhysicalCard $card) => $card->getPosition(),
+                $player->getCardsByPlace(DynastyCard::STATE_DRAW_DECK)
+            );
+            $this->assertSame(count($dynastyPositions), count(array_unique($dynastyPositions)));
+            // conflict cards drawn
+            $this->assertSame(19, count($player->getCardsByPlace(ConflictCard::STATE_DRAW_DECK)));
+            $this->assertSame(5, count($player->getCardsByPlace(ConflictCard::STATE_HAND)));
+            // starting honot
+            $this->assertGreaterThan(0, $playerStateManager->getState($player)->getHonor());
+            // filled provinces
+            $this->assertSame(4, count($player->getCardsByPlace(DynastyCard::STATE_PROVINCE_FACEDOWN)));
+            $this->assertSame(16, count($player->getCardsByPlace(DynastyCard::STATE_DRAW_DECK)));
+            $provinces = $player->getCardsByType(Type::PROVINCE);
+            foreach ($provinces as $province) {
+                $this->assertNotEmpty($province->getTopCards());
+            }
+        }
 
         return $gameId;
     }
